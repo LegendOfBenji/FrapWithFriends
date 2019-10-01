@@ -49,7 +49,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'pry-rails'
-  gem 'annotate'
+  gem 'annotate', '~> 2.7', '>= 2.7.1'
   gem 'bcrypt'
   gem 'jquery-rails'
 end
