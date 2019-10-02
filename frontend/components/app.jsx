@@ -7,7 +7,6 @@ class App extends React.Component {
     return (
     <div>
       <header className="nav-header">
-        <Link to='/'>FrapWithFriends</Link>
         <NavbarContainer />
       </header>
     </div>
