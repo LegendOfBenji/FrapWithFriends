@@ -12,5 +12,7 @@
 class Location < ApplicationRecord
   validates :lat, :lng, presence: true
   
-  has_many :events
+  has_many :events,
+  foreign_key: :location_id,
+  class_name: :Event
 end

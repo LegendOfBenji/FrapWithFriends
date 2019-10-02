@@ -15,9 +15,11 @@ class Event < ApplicationRecord
   validates :openings, :body, :name, presence: true
   validates :openings, numericality: { less_than_or_equal_to: 6,  only_integer: true }
 
-  belongs_to :location
-  has_many :users
-  has_one :host, 
-  through: :users,
-  source: :user
+  belongs_to :location,
+  foreign_key: :location_id,
+  class_name: :Location
+
+  has_many :attendees,
+  foreign_key: :event_id,
+  class_name: :Attendee
 end
