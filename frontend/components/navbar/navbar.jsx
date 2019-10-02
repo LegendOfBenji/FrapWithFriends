@@ -9,7 +9,7 @@ const Navbar = ({ user, logout }) => {
             <Link to='/'>Frap With Friends</Link>
         </div>
         <nav className="login-signup">
-            <Link to="/fraptimes">Frap Times</Link>
+            <Link to="/fraptimes">Frappe Times</Link>
             <Link to='/hosting'>Hosting</Link>
             <Link to='/about'>About</Link>
             <Link to='/login'>Login</Link>
@@ -25,7 +25,7 @@ const Navbar = ({ user, logout }) => {
             <Link to='/'>Frap With Friends</Link>
         </div>
         <nav className="signout">
-            <Link to='/fraptimes'>Frap Times</Link>
+            <Link to='/fraptimes'>Frappe Times</Link>
             <Link to='/hosting'>Hosting</Link>
             <Link to='/profile'>Profile</Link>
             <a className="header-button" onClick={logout}>Log Out</a>
