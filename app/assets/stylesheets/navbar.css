@@ -1,0 +1,59 @@
+.nav-header {
+    border-bottom: 1px solid #006341;
+    display: flex;
+    justify-content: space-around;
+    height: 76px;   
+    position: fixed;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-header a {
+    text-decoration: none;
+    color: #006341;
+    font-family: 'Grenze', serif;
+    font-size: 20px;
+}
+
+.nav-header img {
+    width: 50px;
+    height: 50px;
+}
+
+.frapwithfriends {
+    display: flex;
+    align-items: center;
+}
+
+/* links for navbar */
+
+.login-signup a {
+    margin-left: 25px;
+    color: #006341;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.signout a {
+    margin-left: 25px;
+    color: #006341;
+    cursor: pointer;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.login-signup a:last-child {
+    color: white;
+    background-color: #006341;
+    padding: 10px 25px;
+    border-radius: 4px;
+}
+
+.login-signup a:last-child:hover {
+    color: #006341;
+    background-color: white;
+    border: 2px solid #006341;
+    transition: 0.3s;
+}
