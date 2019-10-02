@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_10_01_165941) do
     t.string "body", null: false
     t.integer "openings", null: false
     t.integer "location_id", null: false
+    t.integer "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
