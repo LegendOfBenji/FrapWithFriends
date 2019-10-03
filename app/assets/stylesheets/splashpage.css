@@ -1,0 +1,157 @@
+/* background */
+
+.zero {
+  display: block;
+  position: absolute;
+  z-index: -1;   
+  width: 100%;
+  height: 50%;
+  background-image: url('FrapSplash.jpg');
+  background-size: cover;
+  background-position: 0% 25%;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* everyone is interesting */
+
+.one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 125px;
+}
+
+.splashpage-header {
+    color: white;
+    font-weight: 550;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    margin-top: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.splashpage-sub-header {
+    color: white;
+    font-weight: 350;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;  
+}
+
+/* show up for tea time */
+
+.two {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin-top: 180px;
+}
+
+.two-header {
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #d56f10;
+    margin-bottom: 12px;
+    margin-right: 15px;
+}
+
+.two-body {
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    color: #1f3833;
+}
+
+.two-one {
+    margin-right: 50px;
+}
+
+.two-two {
+    margin-right: 50px;
+}
+
+/* so why are people doing it? */
+
+.three {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splash-three {
+     color: #1f3833;
+    font-size: 20px;
+    margin-top: 35px;
+    font-weight: 500;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    margin-bottom: 10px;
+}
+
+.chibi-one {
+    display: flex;
+}
+
+.chibi-two {
+    display: flex;
+}
+
+.chibi-three {
+    display: flex;
+}
+/* actually talk to people */
+
+.four {
+    width: 100%;
+    height: 200px;
+}
+
+.splash-four {
+    color: #1f3833;
+    font-size: 30px;
+    margin-top: 35px;
+    font-weight: 600;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    margin-bottom: 10px;
+}
+
+.four-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* there's no such thing as a stranger */
+
+.five {
+
+}
+
+/* do we get to high five yet? */
+
+.six {
+
+}
+
+/* for links */
+
+.splashlink {
+    padding: 20px 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #d56f10;
+    color: white;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    width: 150px;
+}
+
+.splashlink:hover {
+    background-color: #ce5310;
+}

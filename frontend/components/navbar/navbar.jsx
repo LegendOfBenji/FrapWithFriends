@@ -25,7 +25,7 @@ const Navbar = ({ user, logout }) => {
             <Link to='/'>Frap With Friends</Link>
         </div>
         <nav className="signout">
-            <Link to='/fraptimes'>Frappe Times</Link>
+            <Link to='/fraptimes'>Frap Times</Link>
             <Link to='/hosting'>Hosting</Link>
             <Link to='/profile'>Profile</Link>
             <a className="header-button" onClick={logout}>Log Out</a>

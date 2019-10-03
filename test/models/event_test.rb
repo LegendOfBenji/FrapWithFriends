@@ -7,6 +7,7 @@
 #  body        :string           not null
 #  openings    :integer          not null
 #  location_id :integer          not null
+#  host_id     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
