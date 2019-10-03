@@ -1,3 +1,21 @@
+/* TEST FOR HEADER */
+
+body {
+    background-color: #faf6e8;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -250px;
+}
+
+.footer .push {
+    height: 250px;
+}
+
 .signup-login-form-container {
     margin-top: 1%;
     margin-left: 33%;
@@ -7,6 +25,17 @@
 }
 
 .signup-login-form-container form input {
+    padding: 20px 200px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid gray;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+}
+
+.signup-login-form-container form button {
     padding: 20px 200px;
     margin-top: 15px;
     text-align: center;
@@ -38,6 +67,7 @@
 
 .signup-login-submit:hover {
     background-color:#013321;
+    cursor: pointer;
 }
 
 /* Right above signup/login form */
@@ -71,7 +101,11 @@
     height: 50px;
     font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
     font-weight: 600;
-    padding-top: 5px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid white;
 }
 
 .errors-list {
@@ -87,4 +121,5 @@
     color: #006341;
     display: block;
     margin-top: 10px;
+    height: 217px;
 }

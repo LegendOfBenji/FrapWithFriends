@@ -7,9 +7,12 @@ const msp = ({ errors, }) => ({
     errors: errors.session
 });
 
-const mdp = dispatch => ({
+
+const mdp = dispatch => {
+    return {
     processForm: user => dispatch(login(user)),
-    clearErrors: () => dispatch(clearSessionErrors())
-});
+    clearErrors: () => dispatch(clearSessionErrors()),
+    };
+};
 
 export default connect(msp, mdp)(LoginForm);

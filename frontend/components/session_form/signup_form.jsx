@@ -12,10 +12,6 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    //TODO componentdidupdate or componentdidmount to handle re-rendering errors
-    // componentDidUpdate(prevProps, prevState) {
-
-    // }
     componentDidMount(){
         this.props.clearErrors();
     }
@@ -26,7 +22,7 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.processForm(this.state).then(() => this.props.history.push('/'));
     }
 
     renderErrors() {
@@ -82,7 +78,7 @@ class SignupForm extends React.Component {
                         <option value="Bangkok">Bangkok</option>
                         <option value="Other">Other</option>
                     </select>
-                    <input type="submit" className="signup-login-submit" value="LET'S GET FRAPPES" />
+                    <input type="submit" className="signup-login-submit" value="LET'S FRAP OUT" />
                     <Link to='/login' className='login-signup-redirect'>If you've already done this, click here to login</Link>
             </form>
             </div>
