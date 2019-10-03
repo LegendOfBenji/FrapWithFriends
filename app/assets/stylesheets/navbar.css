@@ -1,16 +1,18 @@
 .nav-header {
-    border-bottom: 1px solid #006341;
+    border-bottom: 1px solid #1f3833;
     display: flex;
     justify-content: space-around;
     height: 76px;   
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     align-items: center;
+    overflow: hidden;
+    top: 0;
 }
 
 .nav-header a {
     text-decoration: none;
-    color: #006341;
+    color: #1f3833;
     font-family: 'Grenze', serif;
     font-size: 20px;
 }
@@ -29,7 +31,7 @@
 
 .login-signup a {
     margin-left: 25px;
-    color: #006341;
+    color: #1f3833;
     font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -37,7 +39,7 @@
 
 .signout a {
     margin-left: 25px;
-    color: #006341;
+    color: #1f3833;
     cursor: pointer;
     font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
     font-size: 18px;
@@ -46,14 +48,14 @@
 
 .login-signup a:last-child {
     color: white;
-    background-color: #006341;
+    background-color: #1f3833;
     padding: 10px 25px;
     border-radius: 4px;
 }
 
 .login-signup a:last-child:hover {
-    color: #006341;
+    color: #1f3833;
     background-color: white;
-    border: 2px solid #006341;
+    border: 2px solid #1f3833;
     transition: 0.3s;
 }

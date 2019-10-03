@@ -9,7 +9,7 @@ const Navbar = ({ user, logout }) => {
             <Link to='/'>Frap With Friends</Link>
         </div>
         <nav className="login-signup">
-            <Link to="/fraptimes">Frappe Times</Link>
+            <Link to="/fraptimes">Frap Times</Link>
             <Link to='/hosting'>Hosting</Link>
             <Link to='/about'>About</Link>
             <Link to='/login'>Login</Link>
