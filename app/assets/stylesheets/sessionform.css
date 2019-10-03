@@ -1,3 +1,90 @@
 .signup-login-form-container {
+    margin-top: 1%;
+    margin-left: 33%;
     display: flex;
+    justify-self: center;
+    width: 50px;
+}
+
+.signup-login-form-container form input {
+    padding: 20px 200px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid gray;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+}
+
+.signup-login-form-container form select {
+    padding: 20px 200px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 4px;
+    border-style: 1px solid gray;
+    width: 250px;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+}
+
+.signup-login-submit {
+    border-radius: 10px;
+    width: 590px;
+    background-color: #006340;
+    color: white;
+}
+
+.signup-login-submit:hover {
+    background-color:#013321;
+}
+
+/* Right above signup/login form */
+
+.signup-login-header {
+    margin-top: 5%;
+    margin-left: 33%;
+    text-align: left;
+}
+
+.frap-join {
+    display: inline-block;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #006341;;
+    margin-bottom: 15px;
+}
+
+.frap-join-intro {
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+}
+
+/* for errors */
+
+.errors-list-flash {
+    color: white;
+    background-color: #006341;
+    /* margin-top: 76px; */
+    text-align: center;
+    height: 50px;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+.errors-list {
+    display: none;
+}
+
+/* for links */
+
+.login-signup-redirect {
+    text-decoration: none;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    text-align: center;
+    color: #006341;
+    display: block;
+    margin-top: 10px;
 }
