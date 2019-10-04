@@ -11,3 +11,4 @@ application up and running.
 # users summary story THEN tags
 # TODO
 # finish styling then move on to second MVP after uploading to heroku
+# photo_url to users

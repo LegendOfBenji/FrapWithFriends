@@ -7,6 +7,7 @@ const FooterPage = () => {
                 <div className="links-container">
                     <a href="https://www.linkedin.com/in/benjamin-gu-3a14a787/" className="footer-link-info">LinkedIn</a>
                     <a href="https://www.facebook.com/benjamin.gu.54" className="footer-link-info">Facebook</a>
+                    <a href="https://github.com/LegendOfBenji" className="footer-link-info">Github</a>
                 </div>
                     
                 <div className="footer-rant">
