@@ -12762,3 +12762,9 @@ Completed 200 OK in 360ms (Views: 356.8ms | ActiveRecord: 1.3ms)
   ↳ bin/rails:9
   [1m[35m (5054.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "FrapWithFriends_development"[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-10-03 20:53:56 -0400
+
+PG::ConnectionBad - FATAL:  the database system is shutting down
+:
+
+Started POST "/__better_errors/27ce73dd90d93ac9/variables" for ::1 at 2019-10-03 20:54:00 -0400
