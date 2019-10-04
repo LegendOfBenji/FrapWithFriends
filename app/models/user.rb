@@ -9,6 +9,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  summary         :string
+#  story           :string
+#  discussion      :string
+#  quote           :string
 #
 
 class User < ApplicationRecord

@@ -14786,3 +14786,380 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1205ms (Views: 1158.0ms | ActiveRecord: 8.4ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4226949437190668265)[0m
+  ↳ bin/rails:9
+  [1m[35m (69.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Removeimageurlcolumn (20191004203838)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (211.1ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "image_url"[0m
+  ↳ db/migrate/20191004203838_removeimageurlcolumn.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (125.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191004203838"]]
+  ↳ bin/rails:9
+  [1m[35m (71.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (35.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4226949437190668265)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/bin/annotate:23
+Started POST "/api/session" for ::1 at 2019-10-04 16:48:04 -0400
+Started POST "/api/session" for ::1 at 2019-10-04 16:48:04 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::SessionsController#create as JSON
+
+LoadError - Unable to autoload constant Api::SessionsController, expected /Users/appacademy/Desktop/FrapWithFriends/app/controllers/api/sessions_controller.rb to define it:
+
+  Parameters: {"user"=>{"username"=>"jackie", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jackie"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+Completed 401 Unauthorized in 297ms (Views: 10.1ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/api/session" for ::1 at 2019-10-04 16:48:08 -0400
+Started POST "/api/session" for ::1 at 2019-10-04 16:48:08 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Kiki", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"jackie", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jackie"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Kiki"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Kiki"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Ys39WA-uBLz4-aITupfPVg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ys39WA-uBLz4-aITupfPVg"], ["updated_at", "2019-10-04 20:48:09.401362"], ["id", 1]]
+  ↳ app/models/user.rb:61
+  [1m[35m (69.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (37.3ms)
+Completed 200 OK in 681ms (Views: 72.7ms | ActiveRecord: 80.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-10-04 16:48:11 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ys39WA-uBLz4-aITupfPVg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Kiki"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VdbFwxkJClyBs_Z7kTn7HA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VdbFwxkJClyBs_Z7kTn7HA"], ["updated_at", "2019-10-04 20:48:11.230726"], ["id", 1]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 54ms (Views: 9.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-04 16:58:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (307.5ms)
+Completed 200 OK in 2407ms (Views: 2361.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 16:59:04 -0400
+Processing by Api::EventsController#index as JSON
+  [1m[36mEvent Load (114.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/events_controller.rb:5
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/controllers/api/events_controller.rb:5
+Started GET "/" for ::1 at 2019-10-04 17:01:59 -0400
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (33.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (0.5ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/index.json.jbuilder (813.0ms)
+Completed 200 OK in 176032ms (Views: 948.5ms | ActiveRecord: 163.1ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 17010ms (Views: 16903.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-04 17:07:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 743ms (Views: 713.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 17:07:45 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+Started GET "/api/events" for ::1 at 2019-10-04 17:08:52 -0400
+Started GET "/" for ::1 at 2019-10-04 17:08:52 -0400
+Started GET "/" for ::1 at 2019-10-04 17:08:52 -0400
+Started GET "/" for ::1 at 2019-10-04 17:08:52 -0400
+  Rendered api/events/index.json.jbuilder (1.1ms)
+Completed 500 Internal Server Error in 67225ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::EventsController#index as JSON
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+....partial! 'api/users/user' host: event.id
+...                           ^~~~
+/Users/appacademy/Desktop/FrapWithFriends/app/views/api/events/index.json.jbuilder:5: syntax error, unexpected keyword_end, expecting end-of-input:
+  app/views/api/events/index.json.jbuilder:3:in `'
+  app/controllers/api/events_controller.rb:5:in `index'
+
+  Rendering api/events/index.json.jbuilder
+  Rendered api/events/index.json.jbuilder (2.3ms)
+Completed 500 Internal Server Error in 6639ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+....partial! 'api/users/user' host: event.id
+...                           ^~~~
+/Users/appacademy/Desktop/FrapWithFriends/app/views/api/events/index.json.jbuilder:5: syntax error, unexpected keyword_end, expecting end-of-input:
+  app/views/api/events/index.json.jbuilder:3:in `'
+  app/controllers/api/events_controller.rb:5:in `index'
+
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 1851ms (Views: 1796.2ms | ActiveRecord: 3.3ms)
+
+
+Completed 200 OK in 1851ms (Views: 1805.8ms | ActiveRecord: 4.7ms)
+
+
+Completed 200 OK in 1874ms (Views: 1826.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2019-10-04 17:13:12 -0400
+  [1m[35m (60.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 14535ms (Views: 14507.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 17:13:44 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  Rendered api/events/index.json.jbuilder (0.9ms)
+Completed 500 Internal Server Error in 5759ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+....partial! 'api/users/user' host: event.host_id
+...                           ^~~~
+/Users/appacademy/Desktop/FrapWithFriends/app/views/api/events/index.json.jbuilder:6: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~:
+  app/views/api/events/index.json.jbuilder:3:in `'
+  app/controllers/api/events_controller.rb:5:in `index'
+
+Started GET "/api/events" for ::1 at 2019-10-04 17:29:31 -0400
+  [1m[35m (108.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (1.4ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/index.json.jbuilder (250.1ms)
+Completed 200 OK in 7151ms (Views: 401.7ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-04 17:36:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 7101ms (Views: 7050.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/users" for ::1 at 2019-10-04 17:42:54 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"jackie"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "E_29AboH-SpZ74CH5UxDdg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (24.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 422 Unprocessable Entity in 388ms (Views: 0.5ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 18:18:43 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+Started GET "/api/events" for ::1 at 2019-10-04 18:18:58 -0400
+  [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (2.2ms)
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (113.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (202.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  Rendered api/events/index.json.jbuilder (2706.9ms)
+Completed 500 Internal Server Error in 18031ms (ActiveRecord: 10.1ms)
+
+
+  ↳ app/views/api/events/index.json.jbuilder:1
+
+NameError - undefined local variable or method `host_id' for #<#<Class:0x00007f92d5f24508>:0x00007f92da14f568>:
+  app/views/api/events/index.json.jbuilder:4:in `block (2 levels) in _app_views_api_events_index_json_jbuilder__1121042332802927404_70134350348020'
+  app/views/api/events/index.json.jbuilder:3:in `block in _app_views_api_events_index_json_jbuilder__1121042332802927404_70134350348020'
+  app/views/api/events/index.json.jbuilder:1:in `_app_views_api_events_index_json_jbuilder__1121042332802927404_70134350348020'
+  app/controllers/api/events_controller.rb:5:in `index'
+
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/index.json.jbuilder (1573.2ms)
+Completed 500 Internal Server Error in 3509ms (ActiveRecord: 316.1ms)
+
+
+
+NameError - undefined local variable or method `host_id' for #<#<Class:0x00007f92d5f24508>:0x00007f92d7a0c3e8>:
+  app/views/api/events/index.json.jbuilder:4:in `block (2 levels) in _app_views_api_events_index_json_jbuilder__1121042332802927404_70134329779400'
+  app/views/api/events/index.json.jbuilder:3:in `block in _app_views_api_events_index_json_jbuilder__1121042332802927404_70134329779400'
+  app/views/api/events/index.json.jbuilder:1:in `_app_views_api_events_index_json_jbuilder__1121042332802927404_70134329779400'
+  app/controllers/api/events_controller.rb:5:in `index'
+
+Started POST "/__better_errors/658a66222dc49b18/variables" for ::1 at 2019-10-04 18:19:05 -0400
+Started GET "/api/events" for ::1 at 2019-10-04 18:19:40 -0400
+  [1m[35m (58.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::EventsController#index as JSON
+Started GET "/api/events" for ::1 at 2019-10-04 18:19:45 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (3.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mEvent Load (5.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (0.6ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/index.json.jbuilder (241.7ms)
+Completed 200 OK in 6210ms (Views: 1040.2ms | ActiveRecord: 39.9ms)
+
+
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/index.json.jbuilder (250.9ms)
+Completed 200 OK in 1003ms (Views: 239.1ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 18:20:14 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (0.9ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/index.json.jbuilder (14.9ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 18:20:25 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (0.9ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/index.json.jbuilder (18.5ms)
+Completed 200 OK in 7184ms (Views: 24.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/events" for ::1 at 2019-10-04 18:27:39 -0400
+Processing by Api::EventsController#index as JSON
+  Rendering api/events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/api/events/index.json.jbuilder:1
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 3]]
+  ↳ app/views/api/events/index.json.jbuilder:1
+  Rendered api/events/_event.json.jbuilder (0.7ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.1ms)
+  Rendered api/events/_event.json.jbuilder (0.2ms)
+  Rendered api/events/index.json.jbuilder (50.9ms)
+Completed 200 OK in 131ms (Views: 55.4ms | ActiveRecord: 2.6ms)
+
+
