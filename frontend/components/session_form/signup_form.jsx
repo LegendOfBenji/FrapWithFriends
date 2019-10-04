@@ -56,9 +56,9 @@ class SignupForm extends React.Component {
                 </div>
             <div className="signup-login-form-container">      
             <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.username} placeholder="Username/nickname" onChange={this.handleChange('username')}/>
-                <input type="text" value={this.state.email} placeholder="Email address" onChange={this.handleChange('email')}/>
-                <input type="password" value={this.state.password} placeholder="Password (at least 6 characters you won't forget!)" onChange={this.handleChange('password')}/>
+                        <input type="text" value={this.state.username} placeholder="Username/nickname" onChange={this.handleChange('username')} className="signup-login-inputfield"/>
+                        <input type="text" value={this.state.email} placeholder="Email address" onChange={this.handleChange('email')} className="signup-login-inputfield"/>
+                        <input type="password" value={this.state.password} placeholder="Password (at least 6 characters you won't forget!)" onChange={this.handleChange('password')} className="signup-login-inputfield"/>
                     <select name="Cities" width="100%">
                         <option value="Home city" disabled>Home city</option>
                         <option value="New York">New York</option>

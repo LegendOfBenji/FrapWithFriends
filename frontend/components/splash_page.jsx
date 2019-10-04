@@ -15,11 +15,11 @@ const SplashPage = () => {
         
         <div className="two">
             <div className="two-one">
-                <p className="two-header">Show up For Frap Time</p>
+                <p className="two-header">Show up for Frap time</p>
                 <p className="two-body">You and a few others join a host at a cafe.</p> 
             </div>
             <div className="two-two">
-                <p className="two-header">Have A real Conversation</p>
+                <p className="two-header">Have a real conversation</p>
                 <p className="two-body">You talk for two hours about anything.</p>
             </div>
             <div className="two-three">
@@ -35,7 +35,7 @@ const SplashPage = () => {
                     <img className="chibi-img" src={window.splash1} />
                 <div className="three-body">    
                     <p className="chibi-header">It's cool.</p>
-                    <p className="chibi-body">Everyone at tea time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.</p>
+                    <p className="chibi-body">Everyone at frap time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.</p>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@ const SplashPage = () => {
             <div className="four">
                 <div className="four-content">
                     <p className="splash-four">Do we get to Frap yet?</p>
-                    <Link to='/fraptimes' className="splashlink">Let's Frap Out</Link>
+                    <Link to='/fraptimes' className="splashlink">Let's Frap out</Link>
                 </div>
             </div> 
 
