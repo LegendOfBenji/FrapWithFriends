@@ -1,11 +1,12 @@
 class Api::EventsController < ApplicationController
     def index
-        @events = Event.all
+        @events = Event.all.includes(:host)
+        debugger
         render 'api/events/index'
     end
 
     def show
-        @event = Event.find_by(:host_id)
+        @event = Event.find_by(:host_id).includes(:host)
         render 'api/events/show'
     end
 
