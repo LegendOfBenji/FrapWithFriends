@@ -71,6 +71,13 @@
     margin-right: 50px;
 }
 
+.chibi-header {
+    color: #006340;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+
 /* so why are people doing it? */
 
 .three {
@@ -92,16 +99,38 @@
 }
 
 .chibi-one {
+    margin-top: 30px;
     display: flex;
 }
 
 .chibi-two {
+    margin-top: 30px;
     display: flex;
 }
 
 .chibi-three {
+    margin-top: 30px;
     display: flex;
 }
+
+.chibi-img {
+    height: 270px;
+    margin: 0px 100px;
+}
+
+.chibi-body {
+    width: 300px;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    color: #1f3833;
+    margin-top: 20px;
+}
+
+.three-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* actually talk to people */
 
 .four {
