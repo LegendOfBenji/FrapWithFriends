@@ -20,6 +20,10 @@ class Event < ApplicationRecord
   foreign_key: :location_id,
   class_name: :Location
 
+  belongs_to :host,
+  foreign_key: :host_id,
+  class_name: :User
+
   has_many :attendees,
   foreign_key: :event_id,
   class_name: :Attendee

@@ -60,8 +60,8 @@ class LoginForm extends React.Component {
 			</div> 
 			<div className="signup-login-form-container">
 				<form onSubmit={this.handleSubmit}>
-					<input type="text" value={this.state.username} placeholder="Username" onChange={this.handleChange('username')}/>
-					<input type="password" value={this.state.password} placeholder="Password" onChange={this.handleChange('password')}/>
+					<input type="text" value={this.state.username} placeholder="Username" onChange={this.handleChange('username')} className="signup-login-inputfield"/>
+					<input type="password" value={this.state.password} placeholder="Password" onChange={this.handleChange('password')} className="signup-login-inputfield"/>
 					<input type="submit" className="signup-login-submit" value="SIGN IN" />
 					<button className="signup-login-submit" onClick={this.handleDemo}>Demo User</button>
 					<Link to='/signup' className='login-signup-redirect'>If you've never signed up before, click here</Link>
