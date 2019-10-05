@@ -10,3 +10,6 @@ application up and running.
 # Amazon Web Service (1 hour setup dont mess up or else you have to start over)
 # Work on events (CRUD)
 # Work on maps if there is time
+# url_for(@event.)
+
+# icons for footer
