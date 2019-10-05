@@ -1,7 +1,6 @@
 class Api::EventsController < ApplicationController
     def index
         @events = Event.all.includes(:host)
-        debugger
         render 'api/events/index'
     end
 
@@ -27,6 +26,7 @@ class Api::EventsController < ApplicationController
     end
 
     private
+    #TODO fix this for create action
     def event_params
         params.require(:event).permit(:name, :body)
     end

@@ -1,0 +1,20 @@
+.event-index-one {
+    width: 100%;
+    height: 1000px;
+}
+
+.zero-index {
+  display: block;
+  position: absolute;
+  z-index: -1;   
+  width: 100%;
+  height: 40%;
+  background-image: asset-url('CatFrap.jpg');
+  background-size: cover;
+  background-position: 0% 40%;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

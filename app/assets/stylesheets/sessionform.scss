@@ -59,10 +59,12 @@ body {
 }
 
 .signup-login-submit {
-    border-radius: 10px;
+    border-radius: 6px;
     width: 590px;
     background-color: #006340;
     color: white;
+    padding: 23px;
+    font-size: 18px;
 }
 
 .signup-login-submit:hover {
@@ -73,7 +75,7 @@ body {
 /* Right above signup/login form */
 
 .signup-login-header {
-    margin-top: 5%;
+    margin-top: 7%;
     margin-left: 33%;
     text-align: left;
 }
@@ -121,7 +123,7 @@ body {
     color: #006341;
     display: block;
     margin-top: 10px;
-    margin-bottom: 217px;
+    margin-bottom: 75px;
 }
 
 /* for input fields specifically */
@@ -130,4 +132,12 @@ body {
     text-align: left !important;
     padding-left: 3% !important;
     width: 369px;
+}
+
+.signup-login-form-container > form {
+    height: 500px;
+}
+
+.test {
+    margin-bottom: 100px;
 }
