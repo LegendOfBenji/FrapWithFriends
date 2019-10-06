@@ -4,7 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
-import SearchIndexContainer from './event/search_index_container'
+import SearchIndexContainer from './event/search_index_container';
 import SplashPage from './splash_page';
 import FooterPage from './footer_page';
 
