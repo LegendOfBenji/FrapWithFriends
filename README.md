@@ -13,3 +13,7 @@ application up and running.
 # url_for(@event.)
 
 # icons for footer
+
+# When debugging a rollback go into rails console try the command that you think is breaking the code and append .errors.full_messages
+
+# y u struggle?

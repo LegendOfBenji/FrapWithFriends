@@ -6,18 +6,41 @@ class EventIndex extends React.Component {
         super(props)
     }
 
-    componentDidMount(){
-        this.props.fetchEvents();
+    componentDidMount() {
+        // debugger;
+        this.props.events.fetchEvents();
+        }
+
+    renderEvents() {
+        if (this.props.events.events.length > 0) {
+            return this.props.events.events.map((event, idx) => {
+                const theday = event.date.split(" ")[0].slice(0, -1);
+            const thedate = event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])
+            return (
+                <div className="single-event" key={`eventid-${idx}`}>
+                    <p>{event.name}</p>
+                    <p>{theday}</p>
+                    <p>{thedate}</p>
+                    <p>{event.openings}</p>
+                    <p>{event.username}</p>
+                    <img src={event.photoUrl} />
+                </div>
+            )
+        })
+    }
     }
 
     render() {
+        // debugger;
         return (
             <>
+                <p className="show-header-one">SOLID FRIENDSHIPS</p>
+                <p className="show-header-two">They're here to stay.</p>
                 <div className="zero-index"></div>
-            <h1 className="event-index-one">Placeholder</h1>
+            <div className="event-index-one">{this.renderEvents()}</div>
             </>
         )
-    }
+    }  
 }
 
 export default EventIndex;

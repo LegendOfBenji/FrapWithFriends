@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <script type="text/javascript">
       window.frapLogo = "<%= image_url("FrapLogo.jpg") %>";
       window.splashImg = "<%= image_url("FrapSplash.jpg") %>";
@@ -12,6 +13,8 @@
       window.splash2 = "<%= image_url("Splash2.png") %>";
       window.splash3 = "<%= image_url("Splash3.png") %>";
     </script>
+
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9cMWpUGUl8nRNRCIug-CT1cP5ZSc3h3U"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     
