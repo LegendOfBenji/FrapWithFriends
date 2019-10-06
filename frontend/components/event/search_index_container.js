@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import EventIndex from './EventIndex';
+import Search from './search';
 import { fetchEvents } from '../../actions/event_actions';
 
 const msp = state => ({
@@ -10,4 +10,4 @@ const mdp = dispatch => ({
     fetchEvents: () => dispatch(fetchEvents())
 })
 
-export default connect(msp, mdp)(EventIndex);
+export default connect(msp, mdp)(Search);

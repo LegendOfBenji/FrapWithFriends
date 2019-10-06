@@ -27,4 +27,6 @@ class Event < ApplicationRecord
   has_many :attendees,
   foreign_key: :event_id,
   class_name: :Attendee
+
+  has_one_attached :photo
 end
