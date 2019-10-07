@@ -5,11 +5,12 @@ import EventIndex from '../event/EventIndex'
 const Search = (events, fetchEvents) => {
         return (
             <div>
-                <EventMap events = {events} />
-                <EventIndex 
-                    events = {events}
-                    fetchEvents = {fetchEvents}
+                <EventIndex
+                    events={events}
+                    fetchEvents={fetchEvents}
                 />
+                <EventMap events = {events} 
+                        fetchEvents = {fetchEvents} />
             </div>
         )
 }

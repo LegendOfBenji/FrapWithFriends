@@ -13,7 +13,7 @@
 #
 
 class Event < ApplicationRecord
-  validates :openings, :cityname, :date, :time, :name, presence: true
+  validates :openings, :date, :time, :name, presence: true
   validates :openings, numericality: { less_than_or_equal_to: 6,  only_integer: true }
 
   belongs_to :location,

@@ -1,32 +1,101 @@
 import React from 'react';
+// import MarkerManager from '../../util/marker_manager'
 
 class EventMap extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            center: { lat: 37.77589, lng: -122.345 },
-            zoom: 10
+            center: { lat: 40.751345, lng: -73.983730 },
+            zoom: 14
         }
     }
 
     componentDidMount() {
         const mapOptions = this.state;
-
-
+        this.props.events.fetchEvents();
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        // this.MarkerManager = new MarkerManager(this.map);
-        // this.MarkerManager.updateMarkers();
+        this.createMarkersWithInfo();
     }
 
-    // componentDidUpdate() {
-    //     this.MarkerManager.updateMarkers();
-    // }
+    componentDidUpdate() {
+        const mapOptions = this.state;
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
+        this.createMarkersWithInfo();
+    }
+
+    changeLocation(val) {
+        if (val === "New York") {
+            this.setState({ center: { lat: 40.751345, lng: -73.983730 }, zoom: 14 })
+        } else if (val === "Boston") {
+            this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 14 })
+        } else if (val === "San Francisco") {
+            this.setState({ center: { lat: 37.798907, lng: -122.401191 }, zoom: 14 })
+        } else if (val === "Dallas") {
+            this.setState({ center: { lat: 32.790808, lng: -96.797194 }, zoom: 14 })
+        }
+    }
+
+    createMarkersWithInfo() {
+        if (this.props.events.events.length > 0) {
+        return this.props.events.events.map(event => {
+            let latLng = { lat: event.lat, lng: event.lng }
+
+            let contentString = `<h1>${event.username}</h1>` +
+            `<img class="content-string-img" src=${event.photoUrl} />` +
+                `<p>${event.date.split(" ")[0].slice(0, -1)}</p>` + 
+                `<p>${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
+                `<p>${event.name}</p>` +
+                `<p>${event.openings} spots left!</p>`
+
+
+            let infoWindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+             
+            let marker = new google.maps.Marker({
+                position: latLng,
+                map: this.map,
+                animation: google.maps.Animation.DROP,
+                title: event.name
+            });
+
+            marker.addListener('click', function() {
+                infoWindow.open(this.map, marker);
+            });
+
+            // marker.addListener('click', toggleBounce);
+
+            // function toggleBounce() {
+            //     if (marker.getAnimation() !== null) {
+            //         marker.setAnimation(null);
+            //     } else {
+            //         marker.setAnimation(google.maps.Animation.BOUNCE);
+            //     }
+            // }
+
+            marker.setMap(this.map);
+        })
+    }
+    }
 
     render() {
         return (
-            <div id='map-container' ref={map => this.mapNode = map}>
+            <>
+            <div className="event-locations">
+                <span className="event-decoration">
+                    <button onClick={() => this.changeLocation("New York")}>New York</button>
+                    <button onClick={() => this.changeLocation("Boston")}>Boston</button>
+                    <button onClick={() => this.changeLocation("San Francisco")}>San Francisco</button>
+                    <button onClick={() => this.changeLocation("Dallas")}>Dallas</button>
+                    </span>
             </div>
+            
+            <div className="map-wrapper">
+                <div id='map-container' ref={map => this.mapNode = map}>
+                </div>
+            </div>
+            </>
         )
     }
 }
