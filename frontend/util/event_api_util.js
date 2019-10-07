@@ -5,9 +5,11 @@ export const fetchEvents = () => (
     })
 )
 
-export const fetchEvent = () => (
+export const fetchEvent = id => (
     $.ajax({
         method: "GET",
-        url: "api/event/"
+        url: `api/events/${id}`
     })
 )
+
+//TODO: createEvent, updateEvent(for when a user joins an event), deleteEvent

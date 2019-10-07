@@ -6,10 +6,10 @@ class EventIndex extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        // debugger;
-        this.props.events.fetchEvents();
-        }
+    // componentDidMount() {
+    //     // debugger;
+    //     // this.props.events.fetchEvents();
+    //     }
 
     renderEvents() {
         if (this.props.events.events.length > 0) {
@@ -34,10 +34,12 @@ class EventIndex extends React.Component {
         // debugger;
         return (
             <>
+            <div className="event-index-header">
                 <p className="show-header-one">SOLID FRIENDSHIPS</p>
-                <p className="show-header-two">They're here to stay.</p>
+                <p className="show-header-two">THEY'RE HERE TO STAY.</p>
+            </div>
                 <div className="zero-index"></div>
-            <div className="event-index-one">{this.renderEvents()}</div>
+            {/* <div className="event-index-one">{this.renderEvents()}</div> */}
             </>
         )
     }  

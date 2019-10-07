@@ -4,10 +4,10 @@ class Api::EventsController < ApplicationController
         render 'api/events/index'
     end
 
-    # def show
-    #     @event = Event.find_by(:host_id).includes(:host)
-    #     render 'api/events/show'
-    # end
+    def show
+        @event = Event.find(params[:id])
+        render 'api/events/show'
+    end
 
     # def create
     #     @event = Event.new(event_params)
