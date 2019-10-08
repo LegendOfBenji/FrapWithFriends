@@ -20,9 +20,9 @@ const Navbar = ({ user, logout }) => {
 
     const logoutBar = () => (
         <>
-        <div className="frapwithfriends">
-            <img className="frap-logo" src={window.frapLogo} />
-            <Link to='/'>Frap With Friends</Link>
+        <div className="frapwithfriends"> 
+        <Link to='/'><img className="frap-logo" src={window.frapLogo} /></Link>
+        <Link to='/'>Frap With Friends</Link>
         </div>
         <nav className="signout">
             <Link to='/fraptimes'>Frap Times</Link>

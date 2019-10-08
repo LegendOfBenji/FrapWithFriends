@@ -64,8 +64,30 @@ const SplashPage = () => {
             </div> 
 
             <div className="five">
+                <div className="five-quotes">
+                    <p>”I met people who I continue to be in touch with almost a year later, and people who I shared delightful conversations with that day but no more. Both are their own kind of fun.” <span className="quote">Jojo, NYC</span></p>
+                    <p>”I’m not the type of person who talks to strangers. This doesn’t mean I don’t want to. Frap With Friends just makes it easier because you know everyone there wants it too.” <span className="quote">Kiki, SF</span></p>
+                </div>
+                <div className="five-first-pic">
+                    <img src={window.splash4} />
+                </div>
+                <p className="splash-three">There's no such thing as too many friends.</p>
+                <div className="final-pic">
+                    <img src={window.splash5} />
+                    <div className="final-text">
+                        <p>You're always surrounded by potential friends, so long as you are willing to try. You know your story. Your embarrassments. Your joy. Your idiocyncrasies — the thing that make you, you. But they don't.</p>
+                        <p>And everyone has these — whether or not we know what they are. Everyone around you is a person, loaded with stories that you can't even begin to fathom. They're different from yours, but the fact that we all have them is what brings us together.</p>
+                        <p>In a friend's story, we might discover parts of our own. And in seeing where a friend is coming from, we might realize they're actually not so rare. But we don't discover much just by thinking about it. So let's find out.</p>
+                </div>
+                </div>
+                    
+
             </div>
-            <div className="six">
+            <div className="four">
+                <div className="four-content">
+                    <p className="splash-four">Are you ready to make some friends?</p>
+                    <Link to='/fraptimes' className="splashlink">YES</Link>
+                </div>
             </div>
         
     </>
