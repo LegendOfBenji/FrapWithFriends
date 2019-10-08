@@ -4,21 +4,23 @@
 #
 #  id          :bigint           not null, primary key
 #  name        :string           not null
-#  body        :string           not null
 #  openings    :integer          not null
-#  location_id :integer          not null
 #  host_id     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  date        :string           not null
+#  time        :string           not null
+#  summary     :string
+#  story       :string
+#  discussion  :string
+#  quote       :string
+#  lat         :float
+#  lng         :float
 #
 
 class Event < ApplicationRecord
-  validates :openings, :date, :time, :name, presence: true
-  validates :openings, numericality: { less_than_or_equal_to: 6,  only_integer: true }
-
-  belongs_to :location,
-  foreign_key: :location_id,
-  class_name: :Location
+  validates :openings, :date, :time, :name, :lat, :lng, presence: true
+  validates :openings, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 6,  only_integer: true }
 
   belongs_to :host,
   foreign_key: :host_id,
@@ -29,4 +31,9 @@ class Event < ApplicationRecord
   class_name: :Attendee
 
   has_one_attached :photo
+
+  def decrement_openings
+    @event = Event.find_by(params[:id])
+    @event.openings -= 1
+  end
 end

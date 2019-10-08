@@ -28,8 +28,7 @@
 .splashpage-header {
     color: white;
     font-weight: 550;
-    margin-top: 20px;
-    font-size: 30px;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
@@ -91,9 +90,9 @@
      color: #1f3833;
     font-size: 20px;
     margin-top: 35px;
-    font-weight: 500;
-    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-weight: 540;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .chibi-one {
@@ -154,13 +153,70 @@
 /* there's no such thing as a stranger */
 
 .five {
-
+    width: 100%;
+    height: 1100px;
+    background: white;
 }
 
-/* do we get to high five yet? */
+.quote {
+    color: #006341;
+    font-weight: 600;
+}
 
-.six {
+.five-quotes {
+    display: flex;
+    justify-content: center;
+}
 
+.five-quotes p {
+    width: 15%;    
+    color: rgb(53, 53, 53);
+    margin-top: 3%;
+    margin-right:50px;
+    margin-left: 50px;
+}
+
+.five-quotes p:first-child {
+    border-right: 10px solid #006340;
+    border-radius: 10px;
+    padding-right: 5px;
+}
+
+.five-quotes p:last-child {
+    border-left: 10px solid black;
+    border-radius: 10px;
+    padding-left: 15px
+}
+
+
+
+.five-first-pic img {
+    height: 380px;
+    width: 500px;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+.final-pic {
+    display: flex;
+    justify-content: center;
+}
+
+.final-text {
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    padding-top: 3%;
+}
+
+.final-text p {
+    margin-top: 5%;
+}
+
+.final-pic img {
+    height: 400px;
+    width: 500px;
 }
 
 /* for links */

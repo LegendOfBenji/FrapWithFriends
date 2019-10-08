@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import MarkerManager from '../../util/marker_manager'
 
 class EventMap extends React.Component {
@@ -40,13 +41,14 @@ class EventMap extends React.Component {
         if (this.props.events.events.length > 0) {
         return this.props.events.events.map(event => {
             let latLng = { lat: event.lat, lng: event.lng }
-
             let contentString = `<h1>${event.username}</h1>` +
             `<img class="content-string-img" src=${event.photoUrl} />` +
                 `<p>${event.date.split(" ")[0].slice(0, -1)}</p>` + 
                 `<p>${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
                 `<p>${event.name}</p>` +
                 `<p>${event.openings} spots left!</p>`
+                + `<a href="/#/fraptimes/${event.id}">Check out Event</a>`
+        
 
 
             let infoWindow = new google.maps.InfoWindow({
@@ -62,6 +64,12 @@ class EventMap extends React.Component {
 
             marker.addListener('click', function() {
                 infoWindow.open(this.map, marker);
+            });
+
+            google.maps.event.addListener(this.map, "rightclick", function (event) {
+                var lat = event.latLng.lat();
+                var lng = event.latLng.lng();
+                // populate yor box/field with lat, lng
             });
 
             // marker.addListener('click', toggleBounce);
@@ -80,9 +88,15 @@ class EventMap extends React.Component {
     }
 
     render() {
+        let date = new Date();
+        let month = date.toLocaleString('default', { month: 'long' });       
         return (
             <>
             <div className="event-locations">
+                <div className="event-title">
+                    <img src={window.calendar} />
+                    <p>Frap times in {month}</p>
+                    </div>
                 <span className="event-decoration">
                     <button onClick={() => this.changeLocation("New York")}>New York</button>
                     <button onClick={() => this.changeLocation("Boston")}>Boston</button>

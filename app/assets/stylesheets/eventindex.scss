@@ -37,16 +37,29 @@
 
 .event-locations {
   display: flex;
-  justify-content: center;
-  margin-top: 15%;
+  align-items: center;
+  margin-top: 12%;
   margin-bottom: 6%;
+  flex-direction: column;
+}
+
+.event-title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 1%;
+}
+
+.event-title img {
+  height: 30px;
+  width: 30px;
 }
 
 .event-locations button {
     margin-left: 0;
     background-color: #006341;
     color: white;
-    padding: 5px 50px;
+    padding: 8px 55px;
     border-radius: 4px;
     margin-right: 4%;
 }
@@ -62,14 +75,14 @@
   background-color: black;
   color: white;
   border: 1px solid #006341;
-  transition: .3s;
+  transition: .5s;
   outline: none;
 }
 
 .event-decoration {
   display: flex;
   background-color: #f1e9c6;
-  padding: 50px 110px;
+  padding: 35px 110px;
   border-top: 2px solid #1f3833;
 }
 

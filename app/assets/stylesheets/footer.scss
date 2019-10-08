@@ -13,10 +13,14 @@
 .links-container {
     width: 35%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: .93
+    opacity: .93;
+}
+
+.links-container img {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .links-container a {
@@ -36,4 +40,13 @@
 
 p .foot-info {
     width: 300px;
+}
+
+.footer-credit {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    width: 90px;
 }

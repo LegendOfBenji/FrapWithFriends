@@ -7,9 +7,9 @@ const eventsReducer = (state = {}, action) => {
         case RECEIVE_ALL_EVENTS:
         return action.events;
         case RECEIVE_EVENT:
-        return merge({}, state, {
+        return  {
             [action.event.id]: action.event
-        })
+        }
         default:
         return state;
     }
