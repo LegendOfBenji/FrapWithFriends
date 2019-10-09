@@ -17,18 +17,18 @@ u4 = User.create!(username: "Mononoke", email: "Mononoke@PrincessMononoke.com", 
 u5 = User.create!(username: "Jojo", email: "Jojo@jojo.com", password: "jojosbizzareadventure")
 u6 = User.create!(username: "Dio", email: "Dio@dio.com", password: "jojosbizzareadventure")
 
-e1 = Event.create!(name: "Witch gathering", openings: 3, lat: 40.747149, lng: -73.989218, host_id: u1.id, date: "Saturday, Oct 12", time: "12PM")
+e1 = Event.create!(name: "Witch gathering", openings: 3, lat: 40.747149, lng: -73.989218, host_id: u1.id, date: "Saturday Oct 12", time: "12PM")
 # e2 = Event.create!(name: "Fuzzy get together", openings: 5, lat: 40.748359, lng: -73.985008, host_id: u1.id, date: "Sunday, Oct 13", time: "1AM")
 # e3 = Event.create!(name: "Castle time", openings: 4, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Monday, Oct 14", time: "4PM") 
-e4 = Event.create!(name: "Come get your free breakfast", openings: 2, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Tuesday, Oct 15", time: "7AM")
-e5 = Event.create!(name: "Dio Time", openings: 1, lat: 40.751416, lng: -73.984223, host_id: u5.id, date: "Tuesday, Oct 15", time: "7AM")
-e6 = Event.create!(name: "Jojo Time", openings: 5, lat: 37.798954, lng: -122.401502, host_id: u6.id, date: "Tuesday, Oct 15", time: "7AM", 
+e4 = Event.create!(name: "Come get your free breakfast", openings: 2, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Tuesday Oct 15", time: "7AM")
+e5 = Event.create!(name: "Dio Time", openings: 1, lat: 40.751416, lng: -73.984223, host_id: u5.id, date: "Tuesday Oct 15", time: "7AM")
+e6 = Event.create!(name: "Jojo Time", openings: 5, lat: 37.798954, lng: -122.401502, host_id: u6.id, date: "Tuesday Oct 15", time: "7AM", 
 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum commodo condimentum. Aenean non est ut neque iaculis rhoncus vel sed purus.", 
 story: "Duis scelerisque neque aliquet dui ornare tincidunt. Cras aliquam tellus eget ante scelerisque tincidunt.", 
 discussion: "Phasellus lorem justo, euismod a arcu sed, tincidunt ultrices sapien.",  
 quote: "Quisque ultrices molestie metus non finibus.")
-e7 = Event.create!(name: "Going for broke", openings: 2, lat: 32.790808, lng: -96.797194, host_id: u4.id, date: "Tuesday, Oct 15", time: "7AM")
-e8 = Event.create!(name: "Princesses only", openings: 3, lat: 42.377372, lng: -71.116808, host_id: u2.id, date: "Tuesday, Oct 15", time: "7AM")
+e7 = Event.create!(name: "Going for broke", openings: 2, lat: 32.790808, lng: -96.797194, host_id: u4.id, date: "Tuesday Oct 15", time: "7AM")
+e8 = Event.create!(name: "Princesses only", openings: 3, lat: 42.377372, lng: -71.116808, host_id: u2.id, date: "Tuesday Oct 15", time: "7AM")
 
 a1 = Attendee.create!(user_id: u3.id, event_id: e4.id)
 a2 = Attendee.create!(user_id: u2.id, event_id: e1.id)

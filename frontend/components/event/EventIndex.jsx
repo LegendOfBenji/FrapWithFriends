@@ -14,7 +14,7 @@ class EventIndex extends React.Component {
     renderEvents() {
         if (this.props.events.events.length > 0) {
             return this.props.events.events.map((event, idx) => {
-                const theday = event.date.split(" ")[0].slice(0, -1);
+                const theday = event.date.split(" ")[0];
             const thedate = event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])
             return (
                 <div className="single-event" key={`eventid-${idx}`}>

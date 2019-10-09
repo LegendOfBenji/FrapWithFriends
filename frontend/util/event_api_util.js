@@ -12,4 +12,14 @@ export const fetchEvent = id => (
     })
 )
 
-//TODO: createEvent, updateEvent(for when a user joins an event), deleteEvent
+export const createEvent = event => (
+    $.ajax({
+        method: "POST",
+        url: "api/events",
+        data: event,
+        contentType: false,
+        processData: false
+    })
+)
+
+//TODO: deleteEvent

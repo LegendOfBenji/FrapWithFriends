@@ -8,7 +8,7 @@ class EventMap extends React.Component {
 
         this.state = {
             center: { lat: 40.751345, lng: -73.983730 },
-            zoom: 14
+            zoom: 12
         }
     }
 
@@ -27,13 +27,13 @@ class EventMap extends React.Component {
 
     changeLocation(val) {
         if (val === "New York") {
-            this.setState({ center: { lat: 40.751345, lng: -73.983730 }, zoom: 14 })
+            this.setState({ center: { lat: 40.751345, lng: -73.983730 }, zoom: 12 })
         } else if (val === "Boston") {
-            this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 14 })
+            this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 12 })
         } else if (val === "San Francisco") {
-            this.setState({ center: { lat: 37.798907, lng: -122.401191 }, zoom: 14 })
+            this.setState({ center: { lat: 37.798907, lng: -122.401191 }, zoom: 12 })
         } else if (val === "Dallas") {
-            this.setState({ center: { lat: 32.790808, lng: -96.797194 }, zoom: 14 })
+            this.setState({ center: { lat: 32.790808, lng: -96.797194 }, zoom: 12 })
         }
     }
 
@@ -41,15 +41,13 @@ class EventMap extends React.Component {
         if (this.props.events.events.length > 0) {
         return this.props.events.events.map(event => {
             let latLng = { lat: event.lat, lng: event.lng }
-            let contentString = `<h1>${event.username}</h1>` +
+            let contentString = `<h1 class="event-index-username">${event.username}</h1>` +
             `<img class="content-string-img" src=${event.photoUrl} />` +
-                `<p>${event.date.split(" ")[0].slice(0, -1)}</p>` + 
-                `<p>${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
+                `<p>${event.date.split(" ")[0].slice(0, -1) + ', '} ${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
                 `<p>${event.name}</p>` +
-                `<p>${event.openings} spots left!</p>`
-                + `<a href="/#/fraptimes/${event.id}">Check out Event</a>`
+                `<p class="last-test">${event.openings} spots left!</p>`
+                + `<a class="check-out-event" href="/#/fraptimes/${event.id}">Check out Event</a>`
         
-
 
             let infoWindow = new google.maps.InfoWindow({
                 content: contentString
@@ -66,11 +64,11 @@ class EventMap extends React.Component {
                 infoWindow.open(this.map, marker);
             });
 
-            google.maps.event.addListener(this.map, "rightclick", function (event) {
-                var lat = event.latLng.lat();
-                var lng = event.latLng.lng();
-                // populate yor box/field with lat, lng
-            });
+            // google.maps.event.addListener(this.map, "rightclick", function (event) {
+            //     var lat = event.latLng.lat();
+            //     var lng = event.latLng.lng();
+            //     // populate yor box/field with lat, lng
+            // });
 
             // marker.addListener('click', toggleBounce);
 
