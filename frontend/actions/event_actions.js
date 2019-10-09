@@ -22,3 +22,8 @@ export const fetchEvent = id => dispatch => (
     EventApiUtil.fetchEvent(id)
         .then(event => dispatch(receiveEvent(event)))
 )
+
+export const createEvent = event => dispatch => (
+    EventApiUtil.createEvent(event)
+        .then(event => dispatch(receiveEvent(event)))
+)

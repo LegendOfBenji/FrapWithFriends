@@ -104,6 +104,36 @@
 /* FOR MAP INFO */
 
 .content-string-img {
-  height: 200px;
-  width: 200px;
+  height: 90px;
+  width: 90px;
+  border-radius: 5px;
+}
+
+.last-test {
+  margin-bottom: 10px;
+}
+
+.event-index-username {
+  font-weight: 600;
+  color: #006341;
+}
+
+.content-string-img p {
+  color: #1f3833;
+}
+
+.check-out-event {
+  background-color: white;
+  color: #1f3833;
+  padding: 5px 5px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.check-out-event:hover {
+  background-color: #1f3833;
+  color: white;
+  transition: .3s;
+  border: 1px solid white; 
 }

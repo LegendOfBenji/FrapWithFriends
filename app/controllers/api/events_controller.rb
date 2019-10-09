@@ -9,16 +9,16 @@ class Api::EventsController < ApplicationController
         render 'api/events/show'
     end
 
-    # def create
-    #     @event = Event.new(event_params)
-    #     @event.host_id = current_user.id
+    def create
+        @event = Event.new(event_params)
+        @event.host_id = current_user.id
 
-    #     if @event.save
-    #         render 'api/events/show'
-    #     else
-    #         render ['Missing a parameter'], status: 422
-    #     end
-    # end
+        if @event.save
+            render 'api/events/show'
+        else
+            render json @event.errors.full_messages, status: 422
+        end
+    end
 
     # def destroy
     #     @event = Event.find_by(:host_id)
@@ -27,9 +27,8 @@ class Api::EventsController < ApplicationController
     # end
 
     private
-    #TODO fix this for create action
-    # def event_params
-    #     params.require(:event).permit(:name, :date, :time, :summary, :story, :discussion, :quote, :lat, :lng)
-    # end
+    def event_params
+        params.require(:event).permit(:name, :date, :time, :summary, :story, :discussion, :quote, :lat, :lng, :openings, :photo)
+    end
 end
 
