@@ -21,13 +21,20 @@ class EventShow extends React.Component {
           <br />
           {this.props.event.date}
           {this.props.event.time}
+          {this.props.event.openings} seats left
           </div>
           <div className="event-signup">
-            <button>SIGN ME UP</button>
+            <button className="sign-me-up">SIGN ME UP</button>
             <Link to='/fraptimes'>See Other Frap Times</Link>
           </div>
           <div className="fraptime-info">
-
+            <p className="what-is-fraptime">What is Frap time, exactly?</p>
+              <img src={window.coffeeshow} />
+             <hr></hr>
+              <p className="coffee-summary">Frap time is where five-ish friendly people sit at a cafe with a Host to have a two hour conversation. It's not about anything in particular.</p>
+              <p className="coffee-summary">You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense.</p>
+              <p className="coffee-summary">However, it may bring you comfort to know a little something about your Host. If so, just keep reading!</p>
+              <img src={window.rightdog} />
           </div>
         </div>
 
@@ -50,6 +57,8 @@ class EventShow extends React.Component {
               {this.props.event.story}
               <p className="story-question">What might we talk about?</p>
               {this.props.event.discussion}
+            </div>
+            <div className="story-quote">
               {this.props.event.quote}
             </div>
         </div>
