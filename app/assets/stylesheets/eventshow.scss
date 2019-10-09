@@ -5,39 +5,133 @@
 }
 
 .left-section {
-  width:25%;
+  width: 30%;
 }
 
 .right-section {
-  width: 50%;
+  width: 40%;
 }
 
 .host-intro {
-  
+  color: #006341;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 5%;
 }
 
 .host-subheader {
-
+  font-size: 14px;
+  color: gray;
+  margin-top: 2%;
+  width: 60%;
 }
 
-.event-signup button {
-  
+.event-signup {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+}
+
+.event-signup a {
+  text-decoration: none;
+  color: #006341;
 }
 
 .show-photo {
   height: 30%;
   width: 25%;
-  margin: 100px;
-  border: 10px white solid;
-  border-radius: 5px;
+  margin: 60px;
+  border: 15px white solid;
+  border-bottom: 30px white solid;
+  border-radius: 2px;
 }
 
 
 .storytime {
-
+  width: 50%;
+  background: white;
+  padding: 20px;
+  border: 1px solid #1f3833;
+  border-bottom: none;
+  border-radius: 1px;
+  color: #555;
 }
 
 .story-question {
   font-size: 18px;
   font-weight: 600;
+  color: #1f3833;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
+
+.story-quote {
+  width: 50%;
+  background-color: #f1e9c6;
+  color: #eda20b;
+  border: 1px solid #1f3833;
+  border-radius: 1px;
+  padding: 20px;
+  border-top: none;
+}
+
+.sign-me-up {
+  padding: 20px 80px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #006341;
+    color: black;
+    font-weight: 500;
+    border: 1px solid gray;
+}
+
+.sign-me-up:hover {
+  background-color: #1f3833;
+  color: white;
+}
+
+.fraptime-info {
+  background-color: #f1e9c6;
+  color: #eda20b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.what-is-fraptime {
+  font-weight: 550;
+}
+
+.fraptime-info img {
+  width: 40px;
+  height: 40px;
+  margin-top: 3%;
+}
+
+hr {
+       display: block;
+       position: relative;
+       padding: 0;
+       margin: 8px auto;
+       height: 0;
+       width: 45%;
+       max-height: 0;
+       font-size: 1px;
+       line-height: 0;
+       clear: both;
+       border: none;
+       border-top: 1px solid #1f3833;
+       border-bottom: 1px solid #ffffff;
+    }
+
+    .coffee-summary {
+      margin-top: 3%;
+      margin-bottom: 3%;
+      font-weight: 350;
+    }
