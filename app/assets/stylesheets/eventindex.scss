@@ -22,24 +22,26 @@
 }
 
 .show-header-one {
- color: black;
-    font-weight: 550;
+     color: black;
+    font-weight: 900;
     margin-top: 15px;
-    font-size: 35px;
+    font-size: 55px;
     margin-bottom: 20px;
+    font-family: 'Grenze', serif;
 }
 
 .show-header-two {
     color: black;
     font-weight: 350;  
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Grenze', serif;
 }
 
 .event-locations {
   display: flex;
   align-items: center;
-  margin-top: 12%;
-  margin-bottom: 6%;
+  margin-top: 10%;
+  margin-bottom: 4%;
   flex-direction: column;
 }
 
@@ -98,7 +100,7 @@
 .map-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 /* FOR MAP INFO */
