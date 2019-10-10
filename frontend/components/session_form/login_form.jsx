@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.processForm(this.state).then(() => this.props.history.push('/'));
+		this.props.processForm(this.state).then(() => this.props.history.push('/fraptimes'));
 	}
 
 	renderErrors() {
@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
 
 	handleDemo() {
 		const demoUser = {username: "Kiki", password: "password"};
-		this.props.processForm(demoUser);
+		this.props.processForm(demoUser).then(() => this.props.history.push('/fraptimes'));
 	}
 
 	render() {
