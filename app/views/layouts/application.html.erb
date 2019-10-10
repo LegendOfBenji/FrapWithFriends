@@ -23,11 +23,8 @@
       window.hosting = "<%= image_url("hosting.jpg") %>"
     </script>
 
-    <script type="text/javascript">
-      googleApiKey = "<%= Rails.application.credentials.google[:secret_key] %>"
-    </script>
 
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9cMWpUGUl8nRNRCIug-CT1cP5ZSc3h3U&libraries=places" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["google_api_key"]}&libraries=places" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     
