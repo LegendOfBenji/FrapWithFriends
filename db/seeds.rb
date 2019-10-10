@@ -18,8 +18,6 @@ u5 = User.create!(username: "Jojo", email: "Jojo@jojo.com", password: "jojosbizz
 u6 = User.create!(username: "Dio", email: "Dio@dio.com", password: "jojosbizzareadventure")
 
 e1 = Event.new(name: "Witch gathering", openings: 3, lat: 40.747149, lng: -73.989218, host_id: u1.id, date: "Saturday Oct 12", time: "12PM")
-# e2 = Event.new(name: "Fuzzy get together", openings: 5, lat: 40.748359, lng: -73.985008, host_id: u1.id, date: "Sunday, Oct 13", time: "1AM")
-# e3 = Event.new(name: "Castle time", openings: 4, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Monday, Oct 14", time: "4PM") 
 e4 = Event.new(name: "Come get your free breakfast", openings: 2, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Tuesday Oct 15", time: "7AM")
 e5 = Event.new(name: "Dio Time", openings: 1, lat: 40.751416, lng: -73.984223, host_id: u5.id, date: "Tuesday Oct 15", time: "7AM")
 e6 = Event.new(name: "Jojo Time", openings: 5, lat: 37.798954, lng: -122.401502, host_id: u6.id, date: "Tuesday Oct 15", time: "7AM", 
@@ -44,8 +42,6 @@ e6.photo.attach(io: file6, filename: 'dio.png')
 e7.photo.attach(io: file4, filename: 'mononoke.jpg')
 e8.photo.attach(io: file2, filename: 'totoro.jpg')
 
-# e2.photo.attach(io: file1, filename: 'kiki.png')
-# e3.photo.attach(io: file3, filename: 'howl.png')
 
 e1.save!
 e4.save!
