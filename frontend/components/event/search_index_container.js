@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Search from './search';
+import Search from './Search';
 import { fetchEvents } from '../../actions/event_actions';
 
 const msp = state => ({
