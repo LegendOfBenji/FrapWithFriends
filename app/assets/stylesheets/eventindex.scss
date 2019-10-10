@@ -143,3 +143,49 @@
 .name-of-event {
   font-weight: 500;
 }
+
+/* for time */
+
+input[type=time] {
+    border: none;
+    color: #2a2c2d;
+    font-size: 14px;
+    font-family: 'Grenze', serif;
+    width: 180px;
+    background-color: white;
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #a0a096;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+input[type=time]::-webkit-datetime-edit-text {
+  padding: 19px 4px;
+}
+
+/* hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+  background-color: #d6b2ff;
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+input[type=time]::-webkit-datetime-edit-minute-field {
+  background-color: #d6b2ff;
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #d6b2ff;
+  border-radius: 15%;
+  color: #fff;
+  padding: 19px 13px;
+}
+
+input[type=time]::-webkit-clear-button {
+  display: none;
+}

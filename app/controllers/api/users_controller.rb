@@ -18,6 +18,10 @@ class Api::UsersController < ApplicationController
     # def update
 
     # end
+
+    # def destroy
+
+    # end
   end
 
   private
