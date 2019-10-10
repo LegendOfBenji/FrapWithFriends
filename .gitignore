@@ -31,3 +31,5 @@ bundle.js.map
 
 # api keys
 .env
+# Ignore application configuration
+/config/application.yml
