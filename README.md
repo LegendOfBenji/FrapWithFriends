@@ -16,4 +16,6 @@ application up and running.
 
 # When debugging a rollback go into rails console try the command that you think is breaking the code and append .errors.full_messages
 
+# CONDITIONAL RENDERING (Alex sent a message)
+
 # y u struggle?

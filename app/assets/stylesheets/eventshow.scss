@@ -8,8 +8,26 @@
   width: 30%;
 }
 
+.event-info {
+ margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background: #f0f0f0;
+    border: 1px solid #1f3833;
+    padding: 40px;
+    border-radius: 2px;
+}
+
+
 .right-section {
   width: 40%;
+}
+
+.event-info p {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .host-intro {
@@ -31,6 +49,7 @@
   flex-direction: column;
   width: 60%;
   align-items: center;
+  margin-left: 4%;
 }
 
 .event-signup a {
@@ -78,7 +97,8 @@
 
 .sign-me-up {
   padding: 20px 80px;
-    margin-top: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
     border-radius: 4px;
     font-size: 16px;
@@ -91,6 +111,10 @@
 .sign-me-up:hover {
   background-color: #1f3833;
   color: white;
+}
+
+.event-signup a {
+  margin-bottom: 5%;
 }
 
 .fraptime-info {
@@ -134,4 +158,11 @@ hr {
       margin-top: 3%;
       margin-bottom: 3%;
       font-weight: 350;
+    }
+
+    .host-join {
+      color: #006341;
+      font-size: 20px;
+      margin-bottom: 1%;
+      font-weight: 450;
     }

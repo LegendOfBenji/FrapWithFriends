@@ -22,6 +22,8 @@ class Event < ApplicationRecord
   validates :openings, :date, :name, :time, :lat, :lng, presence: true
   validates :openings, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 6,  only_integer: true }
 
+  validate :ensure_photo
+
   belongs_to :host,
   foreign_key: :host_id,
   class_name: :User
@@ -32,8 +34,9 @@ class Event < ApplicationRecord
 
   has_one_attached :photo
 
-  # def decrement_openings
-  #   @event = Event.find_by(params[:id])
-  #   @event.openings -= 1
-  # end
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "must be attached"
+    end
+  end
 end

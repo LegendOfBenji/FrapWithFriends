@@ -15,33 +15,160 @@ class EventCreate extends React.Component {
       discussion: "",
       quote: "",
       lat: 40.751345,
-      lng: - 73.983730,
-      zoom: 11,
-      photoFile: null
+      lng: -73.983730,
+      photoFile: null,
+      photoUrl: null,
+      center: { lat: 40.751345, lng: -73.983730 },
+      city: "New York"
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    // this.initAutocomplete();
+    this.autocomplete();
   }
 
-  componentDidUpdate() {
-    // this.initAutocomplete();
-  }
-
-    // MAP
-
-  getMapCenter() {
-    let lat = this.state.lat
-    let lng = this.state.lng
-    return {
-      center: { lat, lng },
-      zoom: this.state.zoom,
+  componentDidUpdate(prevProps, prevState){
+    if (prevState.center.lat !== this.state.center.lat || prevState.center.lng !== this.state.center.lng ) {
+    this.autocomplete();
     }
   }
+  changeLocation(val) {
+    if (val === "New York") {
+      this.setState({ center: { lat: 40.744716, lng: -73.845592 }, zoom: 12 });
+      this.setState({ city: "New York" });
+    } else if (val === "Boston") {
+      this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 12 });
+      this.setState({ city: "Boston" });
+    } else if (val === "San Francisco") {
+      this.setState({ center: { lat: 37.731901, lng: -122.443611 }, zoom: 12 });
+      this.setState({ city: "San Francisco" });
+    } else if (val === "Dallas") {
+      this.setState({ center: { lat: 32.790808, lng: -96.797194 }, zoom: 12 });
+      this.setState({ city: "Dallas" });
+    }
+  }
+    // MAP
 
+  autocomplete() {
+    //setting the bounds, have strictBounds to true, TODO: set bounds based on city
+    let center;
+    let mapOptions;
+    let map;
+    let defaultBounds;
+    let city;
+    let swBound1;
+    let swBound2;
+    let neBound1;
+    let neBound2;
+
+    center = this.state.center;
+    city = this.state.city
+    if (city === "New York") {
+      swBound1 = 40.658480;
+      swBound2 = 40.827725;
+      neBound1 = -74.032591;
+      neBound2 = -73.715510;
+    } else if (city === "Boston") {
+      swBound1 = 42.227997;
+      swBound2 = 42.386856;
+      neBound1 = -71.221087;
+      neBound2 = -71.022309;
+    } else if (city === "San Francisco") {
+      swBound1 = 37.693417;
+      swBound2 = 37.809615;
+      neBound1 = -122.497790;
+      neBound2 = -122.400885;
+    } else if (city === "Dallas") {
+      swBound1 = 32.650318;
+      swBound2 = 32.926633;
+      neBound1 = -96.946336;
+      neBound2 = -96.681859;
+    }
+    mapOptions = { center, zoom: 12 }
+    map = new google.maps.Map(this.mapNode, mapOptions);
+    defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(swBound1, neBound1),
+      new google.maps.LatLng(swBound2, neBound2),
+    )
+
+    let input = document.getElementById('searchTextField');
+    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    let options = {
+      bounds: defaultBounds,
+      types: ['establishment'],
+      strictBounds: true
+    }
+
+    let searchBox = new google.maps.places.SearchBox(input, options);
+    
+    const that = this;
+    searchBox.addListener('places_changed', function () {
+      var places = searchBox.getPlaces();
+      // let markers = [];
+
+      if (places.length == 0) {
+        return;
+      }
+
+      // console.log(places);
+      // // Clear out the old markers.
+      // markers.forEach(function (marker) {
+      //   marker.setMap(null);
+      // });
+      // markers = [];
+
+      var bounds = new google.maps.LatLngBounds();
+      places.forEach(function (place) {
+        if (!place.geometry) {
+          console.log("Returned place contains no geometry");
+          return;
+        }
+
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        // Create a marker for each place.
+      let marker = new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        });
+
+        marker.setMap(map)
+        marker.addListener('click', toggleBounce);
+        marker.addListener('click', function (e) {
+          let lat = e.latLng.lat();
+          let lng = e.latLng.lng();
+          that.setState({ lat, lng });
+        })
+
+        function toggleBounce() {
+          if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+          } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+          }
+        }
+      
+        if (place.geometry.viewport) {
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      map.fitBounds(bounds);
+    });
+
+    return searchBox;
+  }
 
   // INPUT/SUBMIT
 
@@ -79,11 +206,14 @@ class EventCreate extends React.Component {
   this.setState({[field]: hours + ':' + minutes + ' ' + meridian});
 }
 }
+
   // AWS
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new formData();
-    formData.append('event[photo]', this.state.photoFile);
+    const formData = new FormData();
+    if (this.state.photoFile) {
+      formData.append('event[photo]', this.state.photoFile);
+    }
     formData.append('event[openings]', this.state.openings);
     formData.append('event[name]', this.state.name);
     formData.append('event[date]', this.state.date);
@@ -94,17 +224,54 @@ class EventCreate extends React.Component {
     formData.append('event[quote]', this.state.quote);
     formData.append('event[lat]', this.state.lat);
     formData.append('event[lng]', this.state.lng);
-    formData.append('event[zoom]', this.state.zoom);
-    this.props.createEvent(formData).then(event => this.props.history.push(`/fraptimes/${event.id}`));
+    this.props.createEvent(formData).then(event => this.props.history.push(`/#/fraptimes/${event.id}`));
+  }
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   // RENDER
 
   render() {
+    console.log(this.state);
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
     return (
       <>
-      <Calendar onChange={this.onDateChange('date')} />
-      <form>
+        <div className="event-index-header">
+          <p className="show-header-one">HOSTING</p>
+          <p className="show-header-two">Make your own event!</p>
+        </div>
+        <div className="hosting-background">
+        </div>
+
+        <span className="event-create-decoration">
+          <span className="event-create-sub-decoration">
+          <button onClick={() => this.changeLocation("New York")}>New York</button>
+          <button onClick={() => this.changeLocation("Boston")}>Boston</button>
+          <button onClick={() => this.changeLocation("San Francisco")}>San Francisco</button>
+          <button onClick={() => this.changeLocation("Dallas")}>Dallas</button>
+          </span>
+        </span>
+        <div className="dumbmap">
+        <input type="text" id="searchTextField" placeholder="Create your event" />
+          <div id='map-container2' ref={map => this.mapNode = map}>
+          </div> 
+        </div>
+
+      <form onSubmit={this.handleSubmit} className="final-form">
+          <Calendar onChange={this.onDateChange('date')} />
+          <label>
+            Time
+        <input type="time" onChange={this.onTimeChange('time')} />
+          </label>
         <label>
           Name
         <input type="text" onChange={this.handleChange('name')}/>
@@ -125,15 +292,11 @@ class EventCreate extends React.Component {
           Quote
             <input type="text" onChange={this.handleChange('quote')}/>
         </label>
-        <label>
-          Time
-        <input type="time" onChange={this.onTimeChange('time')} />
-          </label>
-        <input type="file" />
+        <input type="file" onChange={this.handleFile.bind(this)}/>
+        <h3>Image Preview</h3>
+          <div className="preview">{preview}</div>
+          <button onSubmit={this.handleSubmit}>Submit!</button>
       </form>
-        {/* <input type="text" id="mapsearch" placeholder="Create your event" />
-          <div id='map-container2' ref={map => this.mapNode = map}>
-      </div>  */}
       </>
     )
   }

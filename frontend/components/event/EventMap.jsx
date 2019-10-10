@@ -7,7 +7,7 @@ class EventMap extends React.Component {
         super(props)
 
         this.state = {
-            center: { lat: 40.751345, lng: -73.983730 },
+            center: { lat: 40.744716, lng: -73.845592 },
             zoom: 12
         }
     }
@@ -27,11 +27,11 @@ class EventMap extends React.Component {
 
     changeLocation(val) {
         if (val === "New York") {
-            this.setState({ center: { lat: 40.751345, lng: -73.983730 }, zoom: 12 })
+            this.setState({ center: { lat: 40.744716, lng: -73.845592 }, zoom: 12 })
         } else if (val === "Boston") {
             this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 12 })
         } else if (val === "San Francisco") {
-            this.setState({ center: { lat: 37.798907, lng: -122.401191 }, zoom: 12 })
+            this.setState({ center: { lat: 37.731901, lng: -122.443611 }, zoom: 12 })
         } else if (val === "Dallas") {
             this.setState({ center: { lat: 32.790808, lng: -96.797194 }, zoom: 12 })
         }
@@ -43,8 +43,8 @@ class EventMap extends React.Component {
             let latLng = { lat: event.lat, lng: event.lng }
             let contentString = `<h1 class="event-index-username">${event.username}</h1>` +
             `<img class="content-string-img" src=${event.photoUrl} />` +
+                `<p class="name-of-event">${event.name}</p>` +    
                 `<p>${event.date.split(" ")[0].slice(0, -1) + ', '} ${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
-                `<p>${event.name}</p>` +
                 `<p class="last-test">${event.openings} spots left!</p>`
                 + `<a class="check-out-event" href="/#/fraptimes/${event.id}">Check out Event</a>`
         
