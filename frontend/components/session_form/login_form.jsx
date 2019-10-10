@@ -16,6 +16,10 @@ class LoginForm extends React.Component {
 		this.props.clearErrors();
 	}
 
+	componentWillUnmount() {
+		this.props.clearErrors();
+	}
+
 	handleChange(field) {
 		return e => this.setState({ [field]: e.target.value });
 	}
