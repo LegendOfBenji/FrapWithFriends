@@ -19,14 +19,14 @@ class EventCreate extends React.Component {
       photoFile: null,
       photoUrl: null,
       center: { lat: 40.757900, lng: -73.873005 },
-      city: "New York",
-      errors: []
+      city: "New York"
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
+    this.props.clearErrors();
     this.autocomplete();
   }
 
@@ -34,6 +34,10 @@ class EventCreate extends React.Component {
     if (prevState.center.lat !== this.state.center.lat || prevState.center.lng !== this.state.center.lng ) {
     this.autocomplete();
     }
+  }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
   }
 
   changeLocation(val) {
@@ -51,6 +55,32 @@ class EventCreate extends React.Component {
       this.setState({ city: "Dallas" });
     }
   }
+
+    // ERRORS
+
+  renderErrors() {
+    if (this.props.errors.length > 0) {
+    
+      return (
+        <ul className="errors-list-flash1">
+          {this.props.errors.map((error, idx) => (
+            <li key={`error-${idx}`}>{error}</li>
+          ))}
+        </ul>
+      )
+    } else {
+    
+      return (
+        <ul className="errors-list">
+          {this.props.errors.map((error, idx) => (
+            <li key={`error-${idx}`}>{error}</li>
+          ))}
+        </ul>
+      )
+    }
+  }
+
+
     // MAP
 
   autocomplete() {
@@ -244,8 +274,10 @@ class EventCreate extends React.Component {
 
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
+  
     return (
       <>
+        {this.renderErrors()}
         <div className="event-index-header">
           <p className="show-header-one">HOSTING</p>
           <p className="show-header-two">Make your own event!</p>
@@ -302,7 +334,7 @@ class EventCreate extends React.Component {
         
             <p>Quote</p>
             <input type="text" onChange={this.handleChange('quote')}/>
-            <button onSubmit={this.handleSubmit}>Submit!</button>
+            <button onSubmit={this.handleSubmit}>Host event!</button>
           </div>
       </form>
       </>
