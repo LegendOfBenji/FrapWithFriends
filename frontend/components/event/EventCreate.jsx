@@ -19,7 +19,8 @@ class EventCreate extends React.Component {
       photoFile: null,
       photoUrl: null,
       center: { lat: 40.757900, lng: -73.873005 },
-      city: "New York"
+      city: "New York",
+      errors: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,6 +35,7 @@ class EventCreate extends React.Component {
     this.autocomplete();
     }
   }
+
   changeLocation(val) {
     if (val === "New York") {
       this.setState({ center: { lat: 40.757900, lng: -73.873005 }, zoom: 12 });
@@ -112,13 +114,6 @@ class EventCreate extends React.Component {
         return;
       }
 
-      // console.log(places);
-      // // Clear out the old markers.
-      // markers.forEach(function (marker) {
-      //   marker.setMap(null);
-      // });
-      // markers = [];
-
       var bounds = new google.maps.LatLngBounds();
       places.forEach(function (place) {
         if (!place.geometry) {
@@ -142,13 +137,18 @@ class EventCreate extends React.Component {
           position: place.geometry.location
         });
 
-        marker.setMap(map)
+        let infoWindow = new google.maps.InfoWindow({
+          content: '<p class="selecto">Selected!</p>'
+        })
+        
         marker.addListener('click', toggleBounce);
         marker.addListener('click', function (e) {
           let lat = e.latLng.lat();
           let lng = e.latLng.lng();
           that.setState({ lat, lng });
+          infoWindow.open(map, marker)
         })
+        marker.setMap(map)
 
         function toggleBounce() {
           if (marker.getAnimation() !== null) {
@@ -224,7 +224,9 @@ class EventCreate extends React.Component {
     formData.append('event[quote]', this.state.quote);
     formData.append('event[lat]', this.state.lat);
     formData.append('event[lng]', this.state.lng);
-    this.props.createEvent(formData).then(event => this.props.history.push(`/fraptimes/${event.event.id}`));
+    this.props.createEvent(formData).then(event => this.props.history.push(`/fraptimes/${event.event.id}`), () => {
+
+    });
   }
 
   handleFile(e) {
@@ -241,7 +243,6 @@ class EventCreate extends React.Component {
   // RENDER
 
   render() {
-    console.log(this.state);
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
     return (
       <>
@@ -268,35 +269,41 @@ class EventCreate extends React.Component {
         </div>
 
       <form onSubmit={this.handleSubmit} className="final-form">
+        <div className="left-form">
+          <p className="final-form-header">Pick a date, time, and upload a photo!</p>
+          <hr></hr>
           <Calendar onChange={this.onDateChange('date')} />
           <label>
-            Time
         <input type="time" onChange={this.onTimeChange('time')} />
           </label>
-        <label>
-          Name
+          <label className="fancy">
+            Choose a file
+        <input type="file" className="inputfile" onChange={this.handleFile.bind(this)} />
+          </label>
+          <h3>Image Preview</h3>
+          <hr></hr>
+            <div className="preview">{preview}</div>
+          </div>
+
+          <div className="right-form">
+            <p className="final-form-header">Fill in the fields and submit!</p>
+            <hr></hr>
+        
+            <p>Name</p>
         <input type="text" onChange={this.handleChange('name')}/>
-        </label>
-        <label>
-          Summary
-          <textarea onChange={this.handleChange('summary')}/>
-        </label>
-        <label>
-          Story
-          <textarea onChange={this.handleChange('story')}/>
-        </label>
-        <label>
-          Discussion
-            <textarea onChange={this.handleChange('discussion')}/>
-        </label>
-        <label>
-          Quote
+            <p>Summary</p>
+          <textarea rows="4" cols="50" onChange={this.handleChange('summary')}/>
+            <p>Story</p>
+          <textarea rows="4" cols="50" onChange={this.handleChange('story')}/>
+        
+        
+            <p>Discussion</p>
+            <textarea rows="4" cols="50" onChange={this.handleChange('discussion')}/>
+        
+            <p>Quote</p>
             <input type="text" onChange={this.handleChange('quote')}/>
-        </label>
-        <input type="file" onChange={this.handleFile.bind(this)}/>
-        <h3>Image Preview</h3>
-          <div className="preview">{preview}</div>
-          <button onSubmit={this.handleSubmit}>Submit!</button>
+            <button onSubmit={this.handleSubmit}>Submit!</button>
+          </div>
       </form>
       </>
     )

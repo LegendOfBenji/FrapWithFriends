@@ -44,7 +44,7 @@ class EventMap extends React.Component {
             let contentString = `<h1 class="event-index-username">${event.username}</h1>` +
             `<img class="content-string-img" src=${event.photoUrl} />` +
                 `<p class="name-of-event">${event.name}</p>` +    
-                `<p>${event.date.split(" ")[0].slice(0, -1) + ', '} ${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
+                `<p>${event.date.split(" ")[0] + ', '} ${event.date.split(" ")[1].concat(" " + event.date.split(" ")[2])}</p>` + 
                 `<p class="last-test">${event.openings} spots left!</p>`
                 + `<a class="check-out-event" href="/#/fraptimes/${event.id}">Check out Event</a>`
         
