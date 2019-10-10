@@ -36,7 +36,7 @@ class EventIndex extends React.Component {
             <>
             <div className="event-index-header">
                 <p className="show-header-one">SOLID FRIENDSHIPS</p>
-                <p className="show-header-two">THEY'RE HERE TO STAY.</p>
+                <p className="show-header-two">They're here to stay.</p>
             </div>
                 <div className="zero-index"></div>
             {/* <div className="event-index-one">{this.renderEvents()}</div> */}

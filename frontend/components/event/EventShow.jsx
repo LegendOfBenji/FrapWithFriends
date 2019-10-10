@@ -17,11 +17,11 @@ class EventShow extends React.Component {
       <div className="event-show-wrapper">
         <div className="left-section">
           <div className="event-info">
-          Join {this.props.event.username} for Frap time
-          <br />
-          {this.props.event.date}
-          {this.props.event.time}
-          {this.props.event.openings} seats left
+              <p className="host-join">Join {this.props.event.username} for Frap time</p>
+              <hr></hr>
+              <p>{this.props.event.date}</p>
+              <p>{this.props.event.time}</p>
+              <p>{this.props.event.openings} seats left</p>
           </div>
           <div className="event-signup">
             <button className="sign-me-up">SIGN ME UP</button>

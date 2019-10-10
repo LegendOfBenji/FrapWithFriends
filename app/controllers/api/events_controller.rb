@@ -16,7 +16,7 @@ class Api::EventsController < ApplicationController
         if @event.save
             render 'api/events/show'
         else
-            render json @event.errors.full_messages, status: 422
+            render json: @event.errors.full_messages, status: 422
         end
     end
 
