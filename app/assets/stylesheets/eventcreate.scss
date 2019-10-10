@@ -1,7 +1,7 @@
 /* FOR MAP */
 
 #map-container2 {
-  width: 850px;
+  width: 1000px;
   height: 500px;
 }
 
@@ -31,26 +31,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 800px;
+  height: 700px;
 }
 
 .dumbmap {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 #searchTextField {
   padding: 10px 20px;
   font-size: 14px;
-  margin-top: 10px;
+  width: 40%;
+  margin-bottom: 1%;
 }
 
 .event-create-decoration {
   display: flex;
     align-items: center;
-    margin-top: 12%;
-    margin-bottom: 6%;
+    margin-top: 11%;
+    margin-bottom: 2%;
     flex-direction: column;
 }
 
@@ -104,4 +106,8 @@ height: 200px;
 .event-map-summary a {
   text-decoration: none;
   color: #006341;
+}
+
+.select-location {
+  margin-bottom: 2%;
 }

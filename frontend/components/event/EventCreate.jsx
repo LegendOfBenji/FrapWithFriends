@@ -253,6 +253,7 @@ class EventCreate extends React.Component {
         </div>
 
         <span className="event-create-decoration">
+          <p className="select-location">Pick a city, type in a location, and click on that marker!</p>
           <span className="event-create-sub-decoration">
           <button onClick={() => this.changeLocation("New York")}>New York</button>
           <button onClick={() => this.changeLocation("Boston")}>Boston</button>
