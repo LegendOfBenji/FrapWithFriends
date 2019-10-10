@@ -18,7 +18,7 @@ class EventCreate extends React.Component {
       lng: -73.983730,
       photoFile: null,
       photoUrl: null,
-      center: { lat: 40.751345, lng: -73.983730 },
+      center: { lat: 40.757900, lng: -73.873005 },
       city: "New York"
     }
 
@@ -36,7 +36,7 @@ class EventCreate extends React.Component {
   }
   changeLocation(val) {
     if (val === "New York") {
-      this.setState({ center: { lat: 40.744716, lng: -73.845592 }, zoom: 12 });
+      this.setState({ center: { lat: 40.757900, lng: -73.873005 }, zoom: 12 });
       this.setState({ city: "New York" });
     } else if (val === "Boston") {
       this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 12 });
@@ -224,7 +224,7 @@ class EventCreate extends React.Component {
     formData.append('event[quote]', this.state.quote);
     formData.append('event[lat]', this.state.lat);
     formData.append('event[lng]', this.state.lng);
-    this.props.createEvent(formData).then(event => this.props.history.push(`/#/fraptimes/${event.id}`));
+    this.props.createEvent(formData).then(event => this.props.history.push(`/fraptimes/${event.event.id}`));
   }
 
   handleFile(e) {

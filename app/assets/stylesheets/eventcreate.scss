@@ -1,8 +1,8 @@
 /* FOR MAP */
 
 #map-container2 {
-  width: 800px;
-  height: 400px;
+  width: 850px;
+  height: 500px;
 }
 
 .map-wrapper2 {
@@ -95,4 +95,13 @@
 .preview img {
 height: 200px;
   width: 200px;
+}
+
+.event-map-summary p {
+  margin-bottom: 3%;
+}
+
+.event-map-summary a {
+  text-decoration: none;
+  color: #006341;
 }

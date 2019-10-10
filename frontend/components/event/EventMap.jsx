@@ -7,7 +7,7 @@ class EventMap extends React.Component {
         super(props)
 
         this.state = {
-            center: { lat: 40.744716, lng: -73.845592 },
+            center: { lat: 40.757900, lng: -73.873005 },
             zoom: 12
         }
     }
@@ -27,7 +27,7 @@ class EventMap extends React.Component {
 
     changeLocation(val) {
         if (val === "New York") {
-            this.setState({ center: { lat: 40.744716, lng: -73.845592 }, zoom: 12 })
+            this.setState({ center: { lat: 40.757900, lng: -73.873005 }, zoom: 12 })
         } else if (val === "Boston") {
             this.setState({ center: { lat: 42.377008, lng: -71.117030 }, zoom: 12 })
         } else if (val === "San Francisco") {
@@ -91,6 +91,9 @@ class EventMap extends React.Component {
         return (
             <>
             <div className="event-locations">
+                <div className="event-map-summary">
+                    <p>Click on an event to see more information, <Link to="/hosting">Apply to be a host</Link>, or <Link to='/signup'>sign up if you haven't already.</Link></p>
+                </div>
                 <div className="event-title">
                     <img src={window.calendar} />
                     <p>Frap times in {month}</p>
