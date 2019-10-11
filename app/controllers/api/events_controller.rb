@@ -20,11 +20,11 @@ class Api::EventsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     @event = Event.find_by(:host_id)
-    #     @event.destroy
-    #     render 'api/events/index'
-    # end
+    def destroy
+        @event = Event.find_by(:host_id)
+        @event.destroy
+        render 'api/events/index'
+    end
 
     private
     def event_params
