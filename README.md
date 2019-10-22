@@ -2,7 +2,7 @@
 
 <img width=100% height= 700px src="https://frapwithfriends1-seeds.s3.amazonaws.com/Screen+Shot+2019-10-11+at+9.53.09+AM.png" />
 
-Welcome! FrapWithFriends is based off of the meetup site TeaWithStrangers. It was built during my time at Full Stack Academy for my 10-day sprint: a project in which we create replicas of a project of our choosing. I chose this site because I thought it would be fun and interesting to add different functionalities to an already fully-developed site. <a href="https://frapwithfriends.herokuapp.com/#/">You can check out the site here</a>
+Welcome! FrapWithFriends is based off of the meetup site TeaWithStrangers. It was built during my time at App Academy for my 10-day sprint: a project in which we create replicas of a project of our choosing. I chose this site because I thought it would be fun and interesting to add different functionalities to an already fully-developed site. <a href="https://frapwithfriends.herokuapp.com/#/">You can check out the site here</a>
 
 <img width=100% height=700px src="https://frapwithfriends1-seeds.s3.amazonaws.com/Screen+Shot+2019-10-11+at+11.45.44+AM.png" />
 

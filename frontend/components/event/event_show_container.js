@@ -5,7 +5,7 @@ import { createAttendee } from '../../actions/attendee_actions';
 
 const msp = (state, ownprops) => ({
     event: state.entities.events[ownprops.match.params.id],
-    attended_events: state.entities.users[1].attended_events
+    user: state.entities.users[1]
 })
 
 const mdp = (dispatch) => ({
