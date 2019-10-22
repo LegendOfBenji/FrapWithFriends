@@ -320,9 +320,8 @@ class EventCreate extends React.Component {
           <div className="right-form">
             <p className="final-form-header">Fill in the fields and submit!</p>
             <hr></hr>
-        
             <p>Name</p>
-        <input type="text" onChange={this.handleChange('name')}/>
+          <input type="text" onChange={this.handleChange('name')}/>
             <p>Summary</p>
           <textarea rows="4" cols="50" onChange={this.handleChange('summary')}/>
             <p>Story</p>

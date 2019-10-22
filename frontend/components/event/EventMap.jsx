@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import MarkerManager from '../../util/marker_manager'
 
 class EventMap extends React.Component {
     constructor(props) {
