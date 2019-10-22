@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class EventShow extends React.Component {
   constructor(props) {
     super(props)
+    console.log(this.props);
   }
 
   componentDidMount(){
@@ -11,7 +12,6 @@ class EventShow extends React.Component {
   }
 
   test() {
-    // debugger
     if (this.props.event !== undefined) {
       return (
       <div className="event-show-wrapper">
@@ -24,7 +24,7 @@ class EventShow extends React.Component {
               <p>{this.props.event.openings} seats left</p>
           </div>
           <div className="event-signup">
-            <button className="sign-me-up">SIGN ME UP</button>
+            <button onClick={() => this.props.createAttendee(this.props.event.id)} className="sign-me-up">SIGN ME UP</button>
             <Link to='/fraptimes'>See Other Frap Times</Link>
           </div>
           <div className="fraptime-info">
@@ -37,6 +37,8 @@ class EventShow extends React.Component {
               <img src={window.rightdog} />
           </div>
         </div>
+
+      
 
       <div className="right-section">
         <div className="right-header">
