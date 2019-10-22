@@ -9,7 +9,7 @@ class Api::AttendeesController < ApplicationController
     if @attendee.save
       render json: 'api/events/show'
     else
-      render @event.errors.full_messages
+      render @attendee.errors.full_messages
     end
   end
 
