@@ -320,20 +320,20 @@ class EventCreate extends React.Component {
           <div className="right-form">
             <p className="final-form-header">Fill in the fields and submit!</p>
             <hr></hr>
-            <p>Name</p>
+            <p>Name of Event</p>
           <input type="text" onChange={this.handleChange('name')}/>
-            <p>Summary</p>
+            <p>Summary of what your event will be like.</p>
           <textarea rows="4" cols="50" onChange={this.handleChange('summary')}/>
-            <p>Story</p>
+            <p>Give a brief introduction/story about yourself.</p>
           <textarea rows="4" cols="50" onChange={this.handleChange('story')}/>
         
         
-            <p>Discussion</p>
+            <p>Some topics that might be discussed.</p>
             <textarea rows="4" cols="50" onChange={this.handleChange('discussion')}/>
         
-            <p>Quote</p>
+            <p>Pick a quote that means something to you.</p>
             <input type="text" onChange={this.handleChange('quote')}/>
-            <button onSubmit={this.handleSubmit}>Host event!</button>
+            <button className="host-event-button" onSubmit={this.handleSubmit}>Host event!</button>
           </div>
       </form>
       </>

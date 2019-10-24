@@ -5,3 +5,4 @@ json.story @event.story
 json.discussion @event.discussion
 json.quote @event.quote
 json.username @event.host.username
+json.name @event.name

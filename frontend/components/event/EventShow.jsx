@@ -15,7 +15,8 @@ class EventShow extends React.Component {
 
   componentDidUpdate(prevProps, prevState){
     if (prevState.joined !== this.state.joined) {
-      this.whatToRender();
+      console.log('got here');
+      this.test();
     }
   }
 
@@ -62,6 +63,7 @@ class EventShow extends React.Component {
               <hr></hr>
               <p>{this.props.event.date}</p>
               <p>{this.props.event.time}</p>
+              <p>{this.props.event.name}</p>
               <p>{this.props.event.openings} seats left</p>
           </div>
           <div className="event-signup">
