@@ -3,34 +3,39 @@ import { Link } from 'react-router-dom';
 
 class EventShow extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      joined: false
-    }
+    super(props) 
+    this.joinEvent = this.joinEvent.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchEvent(this.props.match.params.id)
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if (prevState.joined !== this.state.joined) {
-      console.log('got here');
+  componentDidUpdate(prevProps, prevState) {
+      if (prevProps.event !== undefined && prevProps.event.openings !== this.props.event.openings) {
+      this.props.fetchEvent(this.props.match.params.id);
+      this.joined_event(true);
+      this.whatToRender();
       this.test();
     }
   }
 
-  joined_event() {
+  joined_event(attended = false) {
     let that = this;
-    let attended = false;
     if (this.props.event !== undefined) {
     this.props.user.attended_events.forEach(evt => {
       if (evt.event_id === that.props.event.id) {
         attended = true;
       }
     })
-      return attended;
   }
+
+    return attended;
+  }
+
+  joinEvent(e){
+    e.preventDefault();
+    this.props.createAttendee(this.props.event.id).then(() => this.props.fetchEvent(this.props.match.params.id)).then(() => this.props.history.push('/'))
   }
 
   whatToRender() {
@@ -48,7 +53,7 @@ class EventShow extends React.Component {
       )
      } else {
       return (
-        <button onClick={() => this.props.createAttendee(this.props.event.id).then(() => this.setState({joined: true}))} className="sign-me-up">SIGN ME UP</button>
+        <button onClick={this.joinEvent} className="sign-me-up">SIGN ME UP</button>
       )
     }
   }

@@ -7,7 +7,7 @@ class Api::AttendeesController < ApplicationController
     msg.deliver_now
 
     if @attendee.save
-      render json: 'api/events/show'
+      render json: ["successfully signed up"]
     else
       render @attendee.errors.full_messages
     end

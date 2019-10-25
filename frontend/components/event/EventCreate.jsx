@@ -274,7 +274,8 @@ class EventCreate extends React.Component {
 
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
-  
+    const showPreviewText = this.state.photoUrl ? <h3>Image Preview</h3> : null
+
     return (
       <>
         {this.renderErrors()}
@@ -312,7 +313,7 @@ class EventCreate extends React.Component {
             Choose a file
         <input type="file" className="inputfile" onChange={this.handleFile.bind(this)} />
           </label>
-          <h3>Image Preview</h3>
+          {showPreviewText}
           <hr></hr>
             <div className="preview">{preview}</div>
           </div>
