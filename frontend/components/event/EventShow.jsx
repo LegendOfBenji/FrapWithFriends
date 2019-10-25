@@ -13,29 +13,27 @@ class EventShow extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
       if (prevProps.event !== undefined && prevProps.event.openings !== this.props.event.openings) {
-      this.props.fetchEvent(this.props.match.params.id);
-      this.joined_event(true);
+      this.joined_event();
       this.whatToRender();
       this.test();
     }
   }
 
-  joined_event(attended = false) {
-    let that = this;
+  joined_event() {
+    let attended = false;
     if (this.props.event !== undefined) {
-    this.props.user.attended_events.forEach(evt => {
-      if (evt.event_id === that.props.event.id) {
-        attended = true;
-      }
-    })
-  }
-
+      this.props.event.attendees.forEach(evt => {
+        if (evt.event_id === this.props.event.id) {
+          attended = true
+        }
+      })
+    }
     return attended;
   }
 
   joinEvent(e){
     e.preventDefault();
-    this.props.createAttendee(this.props.event.id).then(() => this.props.fetchEvent(this.props.match.params.id)).then(() => this.props.history.push('/'))
+    this.props.createAttendee(this.props.event.id).then(() => this.props.fetchEvent(this.props.match.params.id).then(() => this.props.history.push('/')))
   }
 
   whatToRender() {
