@@ -6,3 +6,4 @@ json.discussion @event.discussion
 json.quote @event.quote
 json.username @event.host.username
 json.name @event.name
+json.attendees @event.attendees

@@ -14,7 +14,7 @@ class Api::EventsController < ApplicationController
         @event.host_id = current_user.id
 
         if @event.save
-            render 'api/events/show'
+            render 'api/users/show'
         else
             render json: @event.errors.full_messages, status: 422
         end
