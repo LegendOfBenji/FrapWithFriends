@@ -10,8 +10,7 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-      @user = current_user
-      render 'api/users/show'
+      render 'api/events/index'
     end
   end
 
