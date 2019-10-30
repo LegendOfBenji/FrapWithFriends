@@ -9,19 +9,10 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 422
     end
 
-    # TODO edit user information this will be on user dashboard
-    
-    # def edit
-
-    # end
-
-    # def update
-
-    # end
-
-    # def destroy
-
-    # end
+    def index
+      @user = current_user
+      render 'api/users/show'
+    end
   end
 
   private
