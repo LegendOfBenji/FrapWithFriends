@@ -4,3 +4,6 @@ json.array!(@events) do |event|
        json.host event.host.id
        json.photoUrl url_for(event.photo)
 end 
+
+
+

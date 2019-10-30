@@ -11,7 +11,6 @@ const Navbar = ({ user, logout }) => {
         <nav className="login-signup">
             <Link to="/fraptimes">Frap Times</Link>
             <Link to='/hosting'>Hosting</Link>
-            <Link to='/about'>About</Link>
             <Link to='/login'>Login</Link>
             <Link to='/signup'>Signup</Link>
         </nav> 

@@ -23,7 +23,7 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Attendee
 
-  has_one :hosted_event,
+  has_many :hosted_events,
   foreign_key: :host_id,
   class_name: :Event
 
