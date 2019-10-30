@@ -5,9 +5,31 @@ class ProfileShow extends React.Component {
     super(props)
   }
 
+  joined() {
+    return this.props.user.events.map(event => {
+      console.log(event.photoUrl)
+      return (
+        <div>
+      {event.openings}
+        </div>
+      )
+    })
+  }
+
+  hosted() {
+    return this.props.user.hosted_events.map(event => {
+      return (
+      <div>{event.openings}</div>
+      )
+    })
+  }
+
   render() {
     return (
-    <h1>Hi</h1>
+      <>
+      <div>{this.joined()}</div>
+      <div>{this.hosted()}</div>
+      </>
     )
   }
 }
