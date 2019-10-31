@@ -18,16 +18,36 @@ u4 = User.create!(username: "Mononoke", email: "Mononoke@PrincessMononoke.com", 
 u5 = User.create!(username: "Jojo", email: "Jojo@jojo.com", password: "jojosbizzareadventure")
 u6 = User.create!(username: "Dio", email: "Dio@dio.com", password: "jojosbizzareadventure")
 
-e1 = Event.new(name: "Witch gathering", openings: 3, lat: 40.747149, lng: -73.989218, host_id: u1.id, date: "Saturday Oct 12", time: "12PM")
-e4 = Event.new(name: "Come get your free breakfast", openings: 2, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Tuesday Oct 15", time: "7AM")
-e5 = Event.new(name: "Dio Time", openings: 1, lat: 40.751416, lng: -73.984223, host_id: u5.id, date: "Tuesday Oct 15", time: "7AM")
-e6 = Event.new(name: "Jojo Time", openings: 5, lat: 37.798954, lng: -122.401502, host_id: u6.id, date: "Tuesday Oct 15", time: "7AM", 
-summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum commodo condimentum. Aenean non est ut neque iaculis rhoncus vel sed purus.", 
-story: "Duis scelerisque neque aliquet dui ornare tincidunt. Cras aliquam tellus eget ante scelerisque tincidunt.", 
+e1 = Event.new(name: "Witch gathering", openings: 3, lat: 40.747149, lng: -73.989218, host_id: u1.id, date: "Saturday Oct 12", time: "12PM",
+summary: "Smile, so we can make a good impression!", 
+story: "All right, first: don't panic! Second: don't panic! And third: did I mention not to panic?", 
+discussion: "Without even thinking about it, I used to be able to fly. Now I'm trying to look inside myself and find out how I did it.",  
+quote: "It's not really important what color your dress is. What matters is the heart inside.")
+e4 = Event.new(name: "Come get your free breakfast", openings: 2, lat: 40.741139, lng: -74.001219, host_id: u3.id, date: "Tuesday Oct 15", time: "7AM",
+summary: "I see no point in living if I can't be beautiful.", 
+story: "'You who swallowed a falling star, o' heartless man, your heart shall soon be mine.' That can't be good for the table.", 
 discussion: "Phasellus lorem justo, euismod a arcu sed, tincidunt ultrices sapien.",  
-quote: "Quisque ultrices molestie metus non finibus.")
-e7 = Event.new(name: "Going for broke", openings: 2, lat: 32.790808, lng: -96.797194, host_id: u4.id, date: "Tuesday Oct 15", time: "7AM")
-e8 = Event.new(name: "Princesses only", openings: 3, lat: 42.377372, lng: -71.116808, host_id: u2.id, date: "Tuesday Oct 15", time: "7AM")
+quote: "I assure you, my friends, I am cone sold stober.")
+e5 = Event.new(name: "Dio Time", openings: 1, lat: 40.751416, lng: -73.984223, host_id: u5.id, date: "Tuesday Oct 15", time: "7AM",
+summary: "That's curious. Help me understand. Why would you do something like that? It's just such an unsavory thing to do.", 
+story: "Happy! Joy! Nice to meetcha!", 
+discussion: "Listen up! This is something you're going to have to do for yourself!",  
+quote: "Yeah! It's my final move!")
+e6 = Event.new(name: "Jojo Time", openings: 5, lat: 37.798954, lng: -122.401502, host_id: u6.id, date: "Tuesday Oct 15", time: "7AM", 
+summary: "It's me Dio and I love lasagna.", 
+story: "Do you remember every piece of bread you've eaten?", 
+discussion: "How many loaves of bread have you eaten in your life?",  
+quote: "Humanity's only desire is to attain peace of mind. Wealth, power, relationships, all towards that single goal.")
+e7 = Event.new(name: "Going for broke", openings: 2, lat: 32.790808, lng: -96.797194, host_id: u4.id, date: "Tuesday Oct 15", time: "7AM",
+summary: "You cannot alter your fate. However, you can rise to meet it.", 
+story: "The Forest Spirit gives life and takes life away. Life and death are his alone.", 
+discussion: "What I want is for the humans and the forest to live in peace!",  
+quote: "Life is suffering. It is hard. The world is cursed. But still you find reasons to keep living.")
+e8 = Event.new(name: "Princesses only", openings: 3, lat: 42.377372, lng: -71.116808, host_id: u2.id, date: "Tuesday Oct 15", time: "7AM",
+summary: "Everybody, try laughing. Then whatever scares you will go away!", 
+story: "That's wonderful. Good for you! I've always wanted to have a haunted house. It's been my lifelong dream!", 
+discussion: "Well, ghosts are a lot harder to see. But when you suddenly move from a lighted room to a dark one, you can't see for a second, and that's when the dust bunnies come out.",  
+quote: "I hate boys! But I love Nanny's food better than anything else in the whole wide world.")
 
 file1 = open('https://frapwithfriends-seeds.s3.amazonaws.com/kiki.png')
 file2 = open('https://frapwithfriends-seeds.s3.amazonaws.com/totoro.jpg')
