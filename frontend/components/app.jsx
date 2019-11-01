@@ -22,7 +22,7 @@ class App extends React.Component {
         <ProtectedRoute exact path='/hosting' component={EventCreateContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route exact path='/profile' component={ProfileShowContainer} />
+        <ProtectedRoute exact path='/profile' component={ProfileShowContainer} />
         <Route exact path="/fraptimes" component={SearchIndexContainer} />
         <Route exact path="/" component={SplashPage} />
         <FooterPage />
