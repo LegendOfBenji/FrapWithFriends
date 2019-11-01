@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-      render 'api/events/index'
+      @user = User.find(params[:id])
+      render 'api/users/index'
     end
   end
 
