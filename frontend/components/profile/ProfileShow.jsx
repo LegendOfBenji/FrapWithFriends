@@ -6,12 +6,11 @@ class ProfileShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser();
+    this.props.fetchUser(this.props.user.id);
   }
 
   joined() {
     return this.props.user.events.map(event => {
-      console.log(event.photoUrl)
       return (
         <div>
       {event.openings}

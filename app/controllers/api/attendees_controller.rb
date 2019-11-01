@@ -13,6 +13,13 @@ class Api::AttendeesController < ApplicationController
     end
   end
 
+  def destroy
+    @attendee = Attendee.find(params[:user_id])
+    @attendee.destroy
+    @user = current_user
+    render 'api/users/show'
+  end
+
   private
   def attendee_params
     params.require(:eventId)

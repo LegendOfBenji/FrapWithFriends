@@ -11,7 +11,7 @@ const msp = (state, ownprops) => ({
 })
 
 const mdp = (dispatch) => ({
-  fetchUser: () => dispatch(fetchUser())
+  fetchUser: (id) => dispatch(fetchUser(id))
 })
 
 export default connect(msp, mdp)(ProfileShow);
