@@ -75,6 +75,14 @@
   border-bottom: none;
   border-radius: 1px;
   color: #555;
+  word-wrap: break-word;
+}
+
+.fit * {
+  display: block;
+  max-width: inherit;
+  box-sizing:border-box;
+  word-wrap: normal;
 }
 
 .story-question {
@@ -92,6 +100,7 @@
   border: 1px solid #1f3833;
   border-radius: 1px;
   padding: 20px;
+  word-wrap: break-word;
   border-top: none;
 }
 

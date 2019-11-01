@@ -100,14 +100,18 @@ class EventShow extends React.Component {
             </div>
 
             <div className="storytime">
-              {this.props.event.summary}
+              <div className="fit">
+                {this.props.event.summary}
               <p className="story-question">What's your story?</p>
-              {this.props.event.story}
+                {this.props.event.story}
               <p className="story-question">What might we talk about?</p>
-              {this.props.event.discussion}
+                {this.props.event.discussion}
+              </div>
             </div>
             <div className="story-quote">
-              {this.props.event.quote}
+              <div className="fit">
+                {this.props.event.quote}
+              </div>
             </div>
         </div>
       </div>
