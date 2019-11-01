@@ -14,16 +14,17 @@ class Api::EventsController < ApplicationController
         @event.host_id = current_user.id
 
         if @event.save
-            render 'api/users/show'
+            render 'api/events/show'
         else
             render json: @event.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        @event = Event.find_by(:host_id)
+        @event = Event.find(params[:id])
         @event.destroy
-        render 'api/events/index'
+        @user = current_user
+        render 'api/users/show'
     end
 
     private

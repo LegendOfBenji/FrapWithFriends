@@ -1,8 +1,9 @@
-import { RECEIVE_ALL_EVENTS, RECEIVE_EVENT } from '../actions/event_actions';
+import { RECEIVE_ALL_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from '../actions/event_actions';
 import { merge } from 'lodash';
 
 const eventsReducer = (state = {}, action) => {
     Object.freeze(state);
+    let newState;
     switch (action.type) {
         case RECEIVE_ALL_EVENTS:
         return action.events;
@@ -10,6 +11,9 @@ const eventsReducer = (state = {}, action) => {
         return  {
             [action.event.id]: action.event
         }
+        case REMOVE_EVENT:
+        console.log(action);
+        return state;
         default:
         return state;
     }

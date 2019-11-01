@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 422
     end
 
-    def index
+    def show
       render 'api/events/index'
     end
   end
