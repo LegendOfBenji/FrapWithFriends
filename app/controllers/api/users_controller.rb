@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
   end
 
     def index
-      debugger
       @user = current_user
       @events = current_user.events
       @hosted_events = current_user.hosted_events
