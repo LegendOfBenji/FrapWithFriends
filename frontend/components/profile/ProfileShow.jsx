@@ -10,28 +10,29 @@ class ProfileShow extends React.Component {
   }
 
   joined() {
-    return this.props.user.events.map(event => {
-      return (
-        <div>
-      {event.openings}
-        </div>
-      )
-    })
+    // return this.props.user.events.map(event => {
+    //   return (
+    //     <div>
+    //   {event.openings}
+    //     </div>
+    //   )
+    // })
   }
 
   hosted() {
-    return this.props.user.hosted_events.map(event => {
-      return (
-      <div>{event.openings}</div>
-      )
-    })
+    // return this.props.user.hosted_events.map(event => {
+    //   return (
+    //   <div>{event.openings}</div>
+    //   )
+    // })
   }
 
   render() {
     return (
       <>
-      <div>{this.joined()}</div>
-      <div>{this.hosted()}</div>
+      <h1>Test</h1>
+      {/* <div>{this.joined()}</div>
+      <div>{this.hosted()}</div> */}
       </>
     )
   }

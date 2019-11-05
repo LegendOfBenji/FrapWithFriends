@@ -1,1 +1,1 @@
-json.extract! user, :id, :username, :email, :attended_events, :hosted_events, :events
+json.extract! user, :id, :username, :email, :attended_events
