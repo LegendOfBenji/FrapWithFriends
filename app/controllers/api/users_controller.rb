@@ -8,12 +8,15 @@ class Api::UsersController < ApplicationController
     else
       render json: @user.errors.full_messages, status: 422
     end
-
-    def show
-      @user = current_user
-      render 'api/users/show'
-    end
   end
+
+    def index
+      debugger
+      @user = current_user
+      @events = current_user.events
+      @hosted_events = current_user.hosted_events
+      render 'api/users/index'
+    end
 
   private
   def user_params
