@@ -21,9 +21,9 @@ export const logout = () => (
   })
 )
 
-export const receiveUser = (id) => (
+export const receiveUser = () => (
   $.ajax({
     method: "GET",
-    url: `api/users/${id}`
+    url: `api/users`
   })
 )
