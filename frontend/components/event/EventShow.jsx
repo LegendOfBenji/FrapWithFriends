@@ -33,7 +33,7 @@ class EventShow extends React.Component {
 
   joinEvent(e){
     e.preventDefault();
-    this.props.createAttendee(this.props.event.id).then(() => this.props.fetchEvent(this.props.match.params.id).then(() => this.props.history.push('/')))
+    this.props.createAttendee(this.props.event.id).then(() => this.props.fetchEvent(this.props.match.params.id).then(() => this.props.history.push('/profile')))
   }
 
   whatToRender() {
