@@ -10,7 +10,8 @@
 #
 
 class Attendee < ApplicationRecord
-  after_save :decrement_openings
+  after_create :decrement_openings
+  after_destroy :incement_openings
 
   belongs_to :event,
   foreign_key: :event_id,
@@ -23,6 +24,12 @@ class Attendee < ApplicationRecord
   def decrement_openings
     event = Event.find_by(id: event_id)
     event.openings -= 1
+    event.save!
+  end
+
+  def increment_openings
+    event = Event.find_by(id: event_id)
+    event.openings += 1
     event.save!
   end
 end
