@@ -5,9 +5,6 @@ const attendeesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ATTENDEE:
       return action.attendee;
-    case DELETE_ATTENDEE:
-      return action.attendee;
-      // todo
     default:
       return state;
   }

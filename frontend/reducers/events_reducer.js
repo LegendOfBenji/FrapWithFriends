@@ -11,9 +11,6 @@ const eventsReducer = (state = {}, action) => {
         return  {
             [action.event.id]: action.event
         }
-        case REMOVE_EVENT:
-        console.log(action);
-        return state;
         default:
         return state;
     }

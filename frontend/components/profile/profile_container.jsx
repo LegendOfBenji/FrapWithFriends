@@ -3,7 +3,6 @@ import ProfileShow from './ProfileShow';
 // import { fetchEvent } from '../../actions/event_actions';
 // import { createAttendee } from '../../actions/attendee_actions';
 import { fetchUser } from '../../actions/session_actions';
-import { deleteEvent } from '../../actions/event_actions';
 
 const msp = (state, ownprops) => ({
   user: state.entities.users[state.session.id],
@@ -12,6 +11,7 @@ const msp = (state, ownprops) => ({
 
 const mdp = (dispatch) => ({
   fetchUser: () => dispatch(fetchUser())
+  
 })
 
 export default connect(msp, mdp)(ProfileShow);

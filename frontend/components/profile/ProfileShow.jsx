@@ -14,8 +14,13 @@ class ProfileShow extends React.Component {
     if (this.props.user.events.length > 0) {
       return this.props.user.events.map(event => {
       return (
-        <div>
-          <img src={event.photoUrl}/>
+        <div className="individual-event">
+          <p>{event.name}</p>
+          <img className="profile-photo" src={event.photoUrl}/>
+          <p>host: {event.username}</p>
+          <p>{event.date}</p>
+          <p>{event.time}</p>
+          <a href={`#/fraptimes/${event.id}`}>Go to event</a>
         </div>
       )
     }) 
@@ -34,7 +39,14 @@ class ProfileShow extends React.Component {
       if (this.props.user.hosted_events.length > 0) {
         return this.props.user.hosted_events.map(event => {
       return (
-        <img src={event.photoUrl}/>
+        <div className="individual-event">
+          <p>{event.name}</p>
+          <img className="profile-photo" src={event.photoUrl}/>
+          <p>host: {event.username}</p>
+          <p>{event.date}</p>
+          <p>{event.time}</p>
+          <a href={`#/fraptimes/${event.id}`}>Go to event</a>
+        </div>
       )
     })
    } else {
@@ -54,8 +66,14 @@ class ProfileShow extends React.Component {
             </div>
             <div className="zero-profile"></div>
       <div className="profile-div">
-      <div>{this.joined()}</div>
-      <div>{this.hosted()}</div>
+        <div>
+          <p className="profile-title">Events you are attending</p>
+          {this.joined()}
+        </div>
+        <div>
+        <p className="profile-title">Events you are hosting</p>
+          {this.hosted()}
+        </div>
       </div>
       </>
     )

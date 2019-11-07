@@ -2,6 +2,8 @@ json.partial! "api/users/user", user: @user
 
 json.events do
     json.array!(@events) do |attended_event|
+        json.id attended_event.id
+        json.attendees attended_event.attendees
         json.photoUrl url_for(attended_event.photo)
         json.username attended_event.host.username
         json.date attended_event.date
@@ -12,6 +14,7 @@ end
 
 json.hosted_events do
     json.array!(@hosted_events) do |hosted_event|
+        json.id hosted_event.id
         json.photoUrl url_for(hosted_event.photo)
         json.username hosted_event.host.username
         json.date hosted_event.date

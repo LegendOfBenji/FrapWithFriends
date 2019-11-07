@@ -63,22 +63,6 @@ class EventMap extends React.Component {
                 infoWindow.open(this.map, marker);
             });
 
-            // google.maps.event.addListener(this.map, "rightclick", function (event) {
-            //     var lat = event.latLng.lat();
-            //     var lng = event.latLng.lng();
-            //     // populate yor box/field with lat, lng
-            // });
-
-            // marker.addListener('click', toggleBounce);
-
-            // function toggleBounce() {
-            //     if (marker.getAnimation() !== null) {
-            //         marker.setAnimation(null);
-            //     } else {
-            //         marker.setAnimation(google.maps.Animation.BOUNCE);
-            //     }
-            // }
-
             marker.setMap(this.map);
         })
     }

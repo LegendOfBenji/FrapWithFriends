@@ -16,4 +16,25 @@
 
   .profile-div {
       display: flex;
+      height: 600px;
+  }
+
+  .individual-event {
+      display: flex;
+      width: 38%;
+      flex-direction: column;
+      border: 1px solid black;
+      margin: 5%;
+      align-items: center;
+  }
+  
+  .profile-photo {
+      width: 50%;
+      height: 50%;
+  }
+
+  .profile-title {
+      text-align: center;
+      margin-top: 3%;
+      margin-bottom: 3%;
   }
