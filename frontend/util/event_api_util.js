@@ -21,12 +21,3 @@ export const createEvent = event => (
         processData: false
     })
 )
-
-export const deleteEvent = id => (
-    $.ajax({
-        method: "DELETE",
-        url: `api/events/${id}`
-    })
-)
-
-//TODO: deleteEvent

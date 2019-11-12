@@ -5,10 +5,3 @@ export const createAttendee = eventId => (
     data: {eventId}
   })
 )
-
-export const deleteAttendee = userId => (
-  $.ajax({
-    method: "DELETE",
-    url: `/api/attendees/${userId}`
-  })
-)

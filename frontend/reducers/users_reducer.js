@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER, REMOVE_ATTENDEE, REMOVE_EVENT } from "../actions/session_actions";
 import { merge } from "lodash";
 
 const usersReducer = (state = {}, action) => {
@@ -9,6 +9,12 @@ const usersReducer = (state = {}, action) => {
       return {
         [action.user.id]: action.user
       };
+    case REMOVE_ATTENDEE:
+      newState = state;
+      break;
+    case REMOVE_EVENT:
+      newState = state;
+      break;
     default:
       return state;
   }

@@ -27,3 +27,19 @@ export const receiveUser = () => (
     url: `api/users`
   })
 )
+
+export const deleteAttendee = id => (
+  $.ajax({
+    method: "DELETE",
+    url: `/api/attendees/${id}`,
+    data: attendee
+  })
+)
+
+export const deleteEvent = id => (
+  $.ajax({
+      method: "DELETE",
+      url: `api/events/${id}`,
+      data: event
+  })
+)
