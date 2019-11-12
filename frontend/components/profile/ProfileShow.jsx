@@ -18,8 +18,7 @@ class ProfileShow extends React.Component {
           <p>{event.name}</p>
           <img className="profile-photo" src={event.photoUrl}/>
           <p>host: {event.username}</p>
-          <p>{event.date}</p>
-          <p>{event.time}</p>
+          <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
         </div>
       )
@@ -43,8 +42,7 @@ class ProfileShow extends React.Component {
           <p>{event.name}</p>
           <img className="profile-photo" src={event.photoUrl}/>
           <p>host: {event.username}</p>
-          <p>{event.date}</p>
-          <p>{event.time}</p>
+          <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
         </div>
       )
