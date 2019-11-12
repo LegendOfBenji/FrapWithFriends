@@ -5,9 +5,9 @@ const FooterPage = () => {
         <>
             <div className="footer push">
                 <div className="links-container">
-                    <a href="https://www.linkedin.com/in/benjamin-gu-3a14a787/" className="footer-link-info"><img src={window.linkedin} alt="linkedin logo"/></a>
-                    <a href="https://www.facebook.com/benjamin.gu.54" className="footer-link-info"><img src={window.facebook} alt="github logo" /></a>
-                    <a href="https://github.com/LegendOfBenji" className="footer-link-info"><img src={window.github} alt="facebook logo" /></a>
+                    <a href="https://www.linkedin.com/in/benjamin-gu-3a14a787/" target="_blank" className="footer-link-info"><img src={window.linkedin} alt="linkedin logo"/></a>
+                    <a href="https://angel.co/benjamin-gu-1" target="_blank" className="footer-link-info"><img src={window.angellist} alt="angellist logo" /></a>
+                    <a href="https://github.com/LegendOfBenji" target="_blank" className="footer-link-info"><img src={window.github} alt="github logo" /></a>
                 </div>
                     
                 <div className="footer-rant">
