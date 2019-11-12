@@ -11,7 +11,7 @@
 
 class Attendee < ApplicationRecord
   after_create :decrement_openings
-  after_destroy :incement_openings
+  after_destroy :increment_openings
 
   belongs_to :event,
   foreign_key: :event_id,

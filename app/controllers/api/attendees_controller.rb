@@ -17,7 +17,9 @@ class Api::AttendeesController < ApplicationController
     @attendee = Attendee.find(params[:user_id])
     @attendee.destroy
     @user = current_user
-    render 'api/users/show'
+    @events = current_user.events
+    @hosted_events = current_user.hosted_events
+    render 'api/users/index'
   end
 
   private

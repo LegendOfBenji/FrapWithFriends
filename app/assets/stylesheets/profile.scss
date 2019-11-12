@@ -70,3 +70,19 @@
       transition: .5s;
       color: #1f3833;
   }
+
+  .unhost-unjoin {
+    margin-left: 0;
+    background-color: #006341;
+    color: white;
+    border-radius: 4px;
+    margin-right: 4%;
+    padding: 10px 40px;
+    margin-top: 5%;
+    cursor: pointer;
+  }
+
+  .unhost-unjoin:hover {
+    background-color: #1f3833;
+    color: white;
+  }

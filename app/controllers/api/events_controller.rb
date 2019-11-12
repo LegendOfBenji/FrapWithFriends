@@ -24,7 +24,9 @@ class Api::EventsController < ApplicationController
         @event = Event.find(params[:id])
         @event.destroy
         @user = current_user
-        render 'api/users/show'
+        @events = current_user.events
+        @hosted_events = current_user.hosted_events
+        render 'api/users/index'
     end
 
     private
