@@ -10,9 +10,12 @@ class ProfileShow extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // if (prevProps.user.events.length !== this.props.user.events.length || prevProps.user.hosted_events.length !== this.props.user.hosted_events.length) {
-    //   this.props.fetchUser();
-    // }
+    if (!prevProps.user.events) {
+      this.props.fetchUser();
+    } else if (prevProps.user.events.length !== this.props.user.events.length || prevProps.user.hosted_events.length !== this.props.user.hosted_events.length) {
+      console.log('got here')
+      this.props.fetchUser();
+    }
   }
 
   joined() {
@@ -26,14 +29,14 @@ class ProfileShow extends React.Component {
           <p>host: {event.username}</p>
           <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
-          <button onClick={() => this.props.removeAttendee(event.id)} className='unhost-unjoin'>Unjoin event</button>
+          <button onClick={() => this.props.removeAttendee(event.id).then(() => this.props.fetchUser())} className='unhost-unjoin'>Unjoin event</button>
         </div>
       )
     }) 
    } else { 
      return (
       <div>
-        <p>You don't have any events that you have joined. <a href='#/fraptimes'>Click here to see all existing events.</a></p>
+        <p>You don't have any events that you have joined. <a className="profile-reroute" href='#/fraptimes'>Click here to see all existing events.</a></p>
       </div>
     )
      }
@@ -51,13 +54,13 @@ class ProfileShow extends React.Component {
           <p>host: {event.username}</p>
           <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
-          <button onClick={() => this.props.removeEvent(event.id)} className='unhost-unjoin'>Unhost event</button>
+          <button onClick={() => this.props.removeEvent(event.id).then(() => this.props.fetchUser())} className='unhost-unjoin'>Unhost event</button>
         </div>
       )
     })
    } else {
      return (
-    <p>You don't have any hosted events. <a href='#/hosting'>You can host an event here!</a></p>
+    <p>You don't have any hosted events. <a className="profile-reroute" href='#/hosting'>You can host an event here!</a></p>
      )
     }
   }

@@ -17,7 +17,7 @@ const usersReducer = (state = {}, action) => {
       return newState;
     case REMOVE_EVENT:
       newState = state;
-      userId = Object.keys(newState[0])
+      userId = Object.keys(newState)
       newState[userId[0]].hosted_events = action.event.hosted_events
       return newState;
     default:
