@@ -11,10 +11,14 @@ const usersReducer = (state = {}, action) => {
       };
     case REMOVE_ATTENDEE:
       newState = state;
-      break;
+      newState.events = newState.events.filter(event => event.id !== action.id)
+      console.log(newState);
+      return newState;
     case REMOVE_EVENT:
       newState = state;
-      break;
+      newState.hosted_events = newState.hosted_events.filter(event => event.id !== action.id)
+      console.log(newState);
+      return newState;
     default:
       return state;
   }

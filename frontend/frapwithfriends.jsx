@@ -22,16 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   // TESTING //
-  window.store = store;
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
-  window.login = login;
-  window.signup = signup;
-  window.logout = logout;
-  window.fetchEvents = fetchEvents;
-  window.fetchEvent = fetchEvent;
-  window.createEvent = createEvent;
-  window.fetchUser = fetchUser;
+  // window.store = store;
+  // window.dispatch = store.dispatch;
+  // window.getState = store.getState;
+  // window.login = login;
+  // window.signup = signup;
+  // window.logout = logout;
+  // window.fetchEvents = fetchEvents;
+  // window.fetchEvent = fetchEvent;
+  // window.createEvent = createEvent;
+  // window.fetchUser = fetchUser;
   // TESTING //
 
   ReactDOM.render(<Root store={store} />, root)

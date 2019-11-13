@@ -31,15 +31,13 @@ export const receiveUser = () => (
 export const deleteAttendee = id => (
   $.ajax({
     method: "DELETE",
-    url: `/api/attendees/${id}`,
-    data: attendee
+    url: `/api/attendees/${id}`
   })
 )
 
 export const deleteEvent = id => (
   $.ajax({
       method: "DELETE",
-      url: `api/events/${id}`,
-      data: event
+      url: `api/events/${id}`
   })
 )
