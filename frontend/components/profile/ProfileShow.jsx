@@ -28,7 +28,7 @@ class ProfileShow extends React.Component {
           <img className="profile-photo" src={event.photoUrl}/>
           <p>host: {event.username}</p>
           <p>{event.date} at {event.time}</p>
-          <a href={`#/fraptimes/${event.id}`}>Go to event</a>
+          <a href={`#/fraptimes/${event.event_id}`}>Go to event</a>
           <button onClick={() => this.props.removeAttendee(event.id).then(() => this.props.fetchUser())} className='unhost-unjoin'>Unjoin event</button>
         </div>
       )
