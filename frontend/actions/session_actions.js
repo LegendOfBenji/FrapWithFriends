@@ -57,7 +57,7 @@ export const fetchUser = () => dispatch => (
     .then(user => dispatch(receiveCurrentUser(user)))
 )
 
-export const removeAttendee = () => dispatch => (
+export const removeAttendee = id => dispatch => (
   ApiUtil.deleteAttendee(id)
     .then((attendee) => dispatch(deleteAttendee(attendee)))
 )

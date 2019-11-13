@@ -3,6 +3,7 @@ import { merge } from "lodash";
 
 const usersReducer = (state = {}, action) => {
   let newState;
+  let userId;
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -11,13 +12,13 @@ const usersReducer = (state = {}, action) => {
       };
     case REMOVE_ATTENDEE:
       newState = state;
-      newState.events = newState.events.filter(event => event.id !== action.id)
-      console.log(newState);
+      userId = Object.keys(newState)
+      newState[userId[0]].events = action.attendee.events
       return newState;
     case REMOVE_EVENT:
       newState = state;
-      newState.hosted_events = newState.hosted_events.filter(event => event.id !== action.id)
-      console.log(newState);
+      userId = Object.keys(newState[0])
+      newState[userId[0]].hosted_events = action.event.hosted_events
       return newState;
     default:
       return state;

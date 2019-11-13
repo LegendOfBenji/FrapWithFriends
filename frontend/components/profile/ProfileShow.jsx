@@ -10,7 +10,9 @@ class ProfileShow extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-
+    // if (prevProps.user.events.length !== this.props.user.events.length || prevProps.user.hosted_events.length !== this.props.user.hosted_events.length) {
+    //   this.props.fetchUser();
+    // }
   }
 
   joined() {
@@ -24,7 +26,7 @@ class ProfileShow extends React.Component {
           <p>host: {event.username}</p>
           <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
-          <button className='unhost-unjoin'>Unjoin event</button>
+          <button onClick={() => this.props.removeAttendee(event.id)} className='unhost-unjoin'>Unjoin event</button>
         </div>
       )
     }) 
@@ -49,7 +51,7 @@ class ProfileShow extends React.Component {
           <p>host: {event.username}</p>
           <p>{event.date} at {event.time}</p>
           <a href={`#/fraptimes/${event.id}`}>Go to event</a>
-          <button className='unhost-unjoin'>Unhost event</button>
+          <button onClick={() => this.props.removeEvent(event.id)} className='unhost-unjoin'>Unhost event</button>
         </div>
       )
     })
