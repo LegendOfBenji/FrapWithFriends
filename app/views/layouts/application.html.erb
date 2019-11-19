@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    
 
     <script type="text/javascript">
       window.frapLogo = "<%= image_url("coffee.png") %>";
@@ -26,6 +27,9 @@
       window.angellist = "<%= image_url("angellist.png") %>"
     </script>
 
+    <link rel="icon" 
+      type="image/png" 
+      href="<%= image_url("coffee.png") %>"/>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}&libraries=places" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
